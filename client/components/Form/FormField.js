@@ -5,11 +5,11 @@ const FormField = field => {
   const { meta: { touched, error } } = field;
   return (
     <View>
+      <Text>{field.label}</Text>
       <TextInput
         {...field.input}
-        label={field.label}
-        type={field.type}
         autoComplete='off'
+        style={{ backgroundColor: '#eee', width: 200, height: 20 }}
       />
       <Text style={{ color: 'red' }}>{touched ? error : ''}</Text>
     </View>
