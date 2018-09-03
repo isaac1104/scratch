@@ -7,7 +7,7 @@ import { withRouter } from 'react-router-native';
 
 class LoginForm extends Component {
   formSubmit = values => {
-    alert('hi');
+    alert(`${values.username} - ${values.password}`);
   };
 
   render() {
@@ -28,7 +28,7 @@ class LoginForm extends Component {
         <Button
           title='Login'
           color='#4ecdc4'
-          onPress={this.formSubmit}
+          onPress={handleSubmit(this.formSubmit)}
         />
       </View>
     );
