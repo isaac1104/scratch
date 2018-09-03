@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, View } from 'react-native';
+import { TouchableOpacity, View, Text } from 'react-native';
 import FormField from './FormField';
 import { Field, reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
@@ -12,6 +12,18 @@ class LoginForm extends Component {
 
   render() {
     const { handleSubmit } = this.props;
+    const style = {
+      button: {
+        backgroundColor: '#4ecdc4',
+        color: 'white',
+        height: 30,
+        lineHeight: 30,
+        marginTop: 10,
+        textAlign: 'center',
+        width: 200
+      },
+    };
+
     return (
       <View>
         <Field
@@ -23,13 +35,10 @@ class LoginForm extends Component {
           name='password'
           component={FormField}
           label='Password'
-          type='password'
         />
-        <Button
-          title='Login'
-          color='#4ecdc4'
-          onPress={handleSubmit(this.formSubmit)}
-        />
+        <TouchableOpacity onPress={handleSubmit(this.formSubmit)}>
+          <Text style={style.button}>Login</Text>
+        </TouchableOpacity>
       </View>
     );
   }
