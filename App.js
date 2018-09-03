@@ -5,18 +5,18 @@ import reduxThunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 
-const store = createStore({
+const store = createStore(
   rootReducer,
   {},
   applyMiddleware(reduxThunk)
-});
+);
 
 const App = () => {
   return (
     <Provider store={store}>
       <Main />
     </Provider>
-  )
+  );
 }
 
 export default App;
