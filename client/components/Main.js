@@ -1,23 +1,17 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { NativeRouter, Route, Switch } from 'react-router-native';
+import Login from './Login';
 
 class Main extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text>Welcome to Scratch!</Text>
-      </View>
+      <NativeRouter>
+        <Switch>
+          <Route exact path='/' component={Login} />
+        </Switch>
+      </NativeRouter>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
 
 export default Main;
