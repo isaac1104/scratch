@@ -4,6 +4,9 @@ import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
 const Home = () => {
   return (
     <View>
+      <View style={styles.navbar}>
+        <Text>Scratch</Text>
+      </View>
       <TouchableOpacity>
         <Text style={styles.button}>Kitchen View</Text>
       </TouchableOpacity>
@@ -27,6 +30,14 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     width: 300
   },
+  navbar: {
+    backgroundColor: '#eeeeee',
+    flex: 1,
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    width: '100%'
+  }
 });
 
 export default Home;
