@@ -4,7 +4,9 @@ import { Text, View } from 'react-native';
 const Home = () => {
   return (
     <View>
-      <Text>Home Route</Text>
+      <Text>Kitchen View</Text>
+      <Text>Customer View</Text>
+      <Text>Setting</Text>
     </View>
   );
 }

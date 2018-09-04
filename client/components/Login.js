@@ -6,7 +6,7 @@ class Login extends Component {
   render() {
     return (
       <View>
-        <Text>Welcome to Scratch!</Text>
+        <Text>Scratch</Text>
         <LoginForm />
       </View>
     );
