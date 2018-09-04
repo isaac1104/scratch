@@ -7,7 +7,7 @@ class Navbar extends Component {
     return (
       <View style={styles.navbar}>
         <Text style={styles.navbarText}>Scratch</Text>
-        <TouchableOpacity onPress={() => this.props.history.goBack()}>
+        <TouchableOpacity onPress={() => this.props.history.push('/home')}>
           <Text>Back</Text>
         </TouchableOpacity>
       </View>

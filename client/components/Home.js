@@ -1,24 +1,25 @@
-import React from 'react';
-import Navbar from './Navbar';
+import React, { Component } from 'react';
 import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
+import { withRouter } from 'react-router-native';
 
-const Home = () => {
-  return (
-    <View style={styles.container}>
-      <Navbar />
+class Home extends Component {
+  render() {
+    const { push } = this.props.history;
+
+    return (
       <View>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => push('/kitchen')}>
           <Text style={styles.button}>Kitchen View</Text>
         </TouchableOpacity>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => push('/customer')}>
           <Text style={styles.button}>Customer View</Text>
         </TouchableOpacity>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => push('/setting')}>
           <Text style={styles.button}>Setting</Text>
         </TouchableOpacity>
       </View>
-    </View>
-  );
+    );
+  }
 }
 
 const styles = StyleSheet.create({
@@ -31,12 +32,6 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     width: 300
   },
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
 });
 
-export default Home;
+export default withRouter(Home);
