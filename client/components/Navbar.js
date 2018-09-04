@@ -3,13 +3,25 @@ import { View, Text, TouchableOpacity } from 'react-native'
 import { withRouter } from 'react-router-native';
 
 class Navbar extends Component {
+  renderBackButton() {
+    if (this.props.location.pathname === '/') {
+      return (
+        <Text />
+      )
+    } else {
+      return (
+        <TouchableOpacity onPress={() => this.props.history.push('/home')}>
+          <Text>Back</Text>
+        </TouchableOpacity>
+      )
+    }
+  }
+
   render() {
     return (
       <View style={styles.navbar}>
         <Text style={styles.navbarText}>Scratch</Text>
-        <TouchableOpacity onPress={() => this.props.history.push('/home')}>
-          <Text>Back</Text>
-        </TouchableOpacity>
+        {this.renderBackButton()}
       </View>
     );
   }
