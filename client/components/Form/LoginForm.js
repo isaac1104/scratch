@@ -8,6 +8,7 @@ import { withRouter } from 'react-router-native';
 class LoginForm extends Component {
   formSubmit = values => {
     console.log(values);
+    this.props.history.push('/home');
   };
 
   render() {
