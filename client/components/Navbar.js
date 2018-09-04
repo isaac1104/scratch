@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native'
+import { View, Text, TouchableOpacity } from 'react-native'
+import { withRouter } from 'react-router-native';
 
 class Navbar extends Component {
   render() {
     return (
       <View style={styles.navbar}>
         <Text style={styles.navbarText}>Scratch</Text>
+        <TouchableOpacity onPress={() => this.props.history.goBack()}>
+          <Text>Back</Text>
+        </TouchableOpacity>
       </View>
     );
   }
@@ -27,4 +31,4 @@ const styles = {
   },
 }
 
-export default Navbar;
+export default withRouter(Navbar);
