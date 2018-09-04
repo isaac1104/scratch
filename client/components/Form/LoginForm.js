@@ -7,7 +7,7 @@ import { withRouter } from 'react-router-native';
 
 class LoginForm extends Component {
   formSubmit = values => {
-    alert(`${values.username} - ${values.password}`);
+    console.log(values);
   };
 
   render() {
