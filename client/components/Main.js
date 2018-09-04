@@ -9,8 +9,8 @@ class Main extends Component {
     return (
       <NativeRouter>
         <Switch>
-          <Route exact path='/' component={Login} />
-          <Route exact path='/home' component={Home} />
+          {/* <Route exact path='/' component={Login} /> */}
+          <Route exact path='/' component={Home} />
         </Switch>
       </NativeRouter>
     );
