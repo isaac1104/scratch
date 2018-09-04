@@ -5,8 +5,8 @@ import LoginForm from './Form/LoginForm';
 class Login extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text>Scratch</Text>
+      <View>
+        <Text style={styles.text}>Scratch</Text>
         <LoginForm />
       </View>
     );
@@ -14,12 +14,10 @@ class Login extends Component {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+  text: {
+    textAlign: 'center',
+    marginBottom: 10
+  }
 });
 
 export default Login;

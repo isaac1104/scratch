@@ -9,12 +9,6 @@ import CustomerView from './CustomerView';
 import Setting from './Setting';
 
 class Main extends Component {
-  renderNavbar() {
-
-  }
-  componentDidMount() {
-    console.log(window);
-  }
   render() {
     return (
       <NativeRouter>
