@@ -4,9 +4,9 @@ import { NativeRouter, Route, Switch } from 'react-router-native';
 import Navbar from './Navbar';
 import Login from './Login';
 import Home from './Home';
-import KitchenView from './KitchenView';
-import CustomerView from './CustomerView';
-import Setting from './Setting';
+import KitchenView from './Kitchen/KitchenView';
+import CustomerView from './Customer/CustomerView';
+import Setting from './Setting/Setting';
 
 class Main extends Component {
   render() {

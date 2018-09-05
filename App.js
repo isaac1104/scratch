@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Main from './client/components/Main';
-import rootReducer from './client/reducers';
+import Main from './src/client/components/Main';
+import rootReducer from './src/client/reducers';
 import reduxThunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
