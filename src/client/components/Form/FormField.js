@@ -20,6 +20,7 @@ const FormField = field => {
       <TextInput
         {...field.input}
         style={style.input}
+        secureTextEntry={field.secure}
       />
       <Text style={{ color: 'red' }}>{touched ? error : ''}</Text>
     </View>

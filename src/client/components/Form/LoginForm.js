@@ -20,11 +20,13 @@ class LoginForm extends Component {
           name='username'
           component={FormField}
           label='Username'
+          secure={false}
         />
         <Field
           name='password'
           component={FormField}
           label='Password'
+          secure={true}
         />
         <TouchableOpacity onPress={handleSubmit(this.formSubmit)}>
           <Text style={styles.button}>Login</Text>
