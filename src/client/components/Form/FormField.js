@@ -6,7 +6,7 @@ const FormField = field => {
   const style = {
     input: {
       width: 200,
-      height: 20,
+      height: 30,
       borderColor: 'black',
       borderWidth: 1,
       backgroundColor: '#eee',
