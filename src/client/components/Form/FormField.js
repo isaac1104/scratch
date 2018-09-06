@@ -19,7 +19,6 @@ const FormField = field => {
       <Text>{field.label}</Text>
       <TextInput
         {...field.input}
-        autoComplete='off'
         style={style.input}
       />
       <Text style={{ color: 'red' }}>{touched ? error : ''}</Text>
