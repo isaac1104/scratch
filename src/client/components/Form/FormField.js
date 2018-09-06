@@ -6,7 +6,7 @@ const FormField = field => {
   const style = {
     input: {
       width: 200,
-      height: 20,
+      height: 30,
       borderColor: 'black',
       borderWidth: 1,
       backgroundColor: '#eee',
@@ -19,8 +19,8 @@ const FormField = field => {
       <Text>{field.label}</Text>
       <TextInput
         {...field.input}
-        autoComplete='off'
         style={style.input}
+        secureTextEntry={field.secure}
       />
       <Text style={{ color: 'red' }}>{touched ? error : ''}</Text>
     </View>
