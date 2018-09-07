@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
 import { withRouter } from 'react-router-native';
+import { Button } from 'react-native-paper';
 
 class Home extends Component {
   render() {
@@ -8,15 +9,27 @@ class Home extends Component {
 
     return (
       <View>
-        <TouchableOpacity onPress={() => push('/kitchen')}>
-          <Text style={styles.button}>Kitchen View</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => push('/customer')}>
-          <Text style={styles.button}>Customer View</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => push('/setting')}>
-          <Text style={styles.button}>Setting</Text>
-        </TouchableOpacity>
+        <Button
+          onPress={() => push('/kitchen')}
+          style={styles.button}
+          mode='contained'
+          >
+          <Text style={styles.text}>Kitchen View</Text>
+        </Button>
+        <Button
+          onPress={() => push('/customer')}
+          style={styles.button}
+          mode='contained'
+          >
+          <Text style={styles.text}>Customer View</Text>
+        </Button>
+        <Button
+          onPress={() => push('/setting')}
+          style={styles.button}
+          mode='contained'
+          >
+          <Text style={styles.text}>Setting</Text>
+        </Button>
       </View>
     );
   }
@@ -24,14 +37,13 @@ class Home extends Component {
 
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: '#4ecdc4',
-    color: 'white',
+    width: 500,
     height: 60,
-    lineHeight: 60,
-    marginTop: 10,
-    textAlign: 'center',
-    width: 300
+    marginTop: 10
   },
+  text: {
+    lineHeight: 40
+  }
 });
 
 export default withRouter(Home);
