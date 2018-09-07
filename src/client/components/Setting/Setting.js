@@ -9,24 +9,28 @@ class Setting extends Component {
         <Button
           style={styles.button}
           mode='contained'
+          icon='update'
           >
           <Text style={styles.text}>Update Account Info</Text>
         </Button>
         <Button
           style={styles.button}
           mode='contained'
+          icon='add'
           >
           <Text style={styles.text}>Add Menu</Text>
         </Button>
         <Button
           style={styles.button}
           mode='contained'
+          icon='view-list'
           >
           <Text style={styles.text}>View Orders</Text>
         </Button>
         <Button
           style={styles.button}
           mode='contained'
+          icon='clear'
           >
           <Text style={styles.text}>Log Out</Text>
         </Button>

@@ -1,9 +1,21 @@
 import React, { Component } from 'react';
 import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
 import { withRouter } from 'react-router-native';
-import { Button } from 'react-native-paper';
+import { Button, Modal, Portal } from 'react-native-paper';
 
 class Home extends Component {
+  state = {
+    visible: false
+  };
+
+  showModal() {
+    this.setState({ visible: true });
+  };
+
+  hideModal() {
+    this.setState({ visible: false });
+  };
+
   render() {
     const { push } = this.props.history;
 
@@ -18,7 +30,7 @@ class Home extends Component {
           <Text style={styles.text}>Kitchen View</Text>
         </Button>
         <Button
-          onPress={() => push('/customer')}
+          onPress={() => this.showModal()}
           style={styles.button}
           mode='contained'
           icon='person'
@@ -33,6 +45,15 @@ class Home extends Component {
           >
           <Text style={styles.text}>Setting</Text>
         </Button>
+        <Portal>
+          <Modal
+            visible={this.state.visible}
+            onDismiss={() => this.hideModal()}
+            >
+            <Text>Input Keypad here</Text>
+            <Text>Touch anywhere to close</Text>
+          </Modal>
+        </Portal>
       </View>
     );
   }
