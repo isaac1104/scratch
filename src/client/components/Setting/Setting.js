@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
   button: {
     width: 500,
     height: 60,
-    marginTop: 10
+    marginTop: 5
   },
   text: {
     lineHeight: 40
