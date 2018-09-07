@@ -40,7 +40,7 @@ class Home extends Component {
 
 const styles = StyleSheet.create({
   button: {
-    width: 500,
+    width: 400,
     height: 60,
     marginTop: 10
   },
