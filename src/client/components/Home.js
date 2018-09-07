@@ -13,6 +13,7 @@ class Home extends Component {
           onPress={() => push('/kitchen')}
           style={styles.button}
           mode='contained'
+          icon='restaurant'
           >
           <Text style={styles.text}>Kitchen View</Text>
         </Button>
@@ -20,6 +21,7 @@ class Home extends Component {
           onPress={() => push('/customer')}
           style={styles.button}
           mode='contained'
+          icon='person'
           >
           <Text style={styles.text}>Customer View</Text>
         </Button>
@@ -27,6 +29,7 @@ class Home extends Component {
           onPress={() => push('/setting')}
           style={styles.button}
           mode='contained'
+          icon='settings'
           >
           <Text style={styles.text}>Setting</Text>
         </Button>
