@@ -1,24 +1,22 @@
 import React from 'react';
-import { View, Text, TextInput } from 'react-native';
+import { View } from 'react-native';
+import { Text, TextInput } from 'react-native-paper'
 
 const FormField = field => {
   const { meta: { touched, error } } = field;
   const style = {
     input: {
-      width: 200,
-      height: 30,
-      borderColor: 'black',
-      borderWidth: 1,
-      backgroundColor: '#eee',
-      marginTop: 10
+      width: 250,
+      height: 60
     }
   };
 
   return (
     <View>
-      <Text>{field.label}</Text>
       <TextInput
         {...field.input}
+        mode='outlined'
+        label={field.label}
         style={style.input}
         secureTextEntry={field.secure}
       />

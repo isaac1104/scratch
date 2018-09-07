@@ -1,35 +1,53 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Text, View, TouchableOpacity, StyleSheet } from 'react-native'
+import { Button } from 'react-native-paper';
 
-const Setting = () => {
-  return (
-    <View>
-      <TouchableOpacity>
-        <Text style={styles.button}>Update Account Info</Text>
-      </TouchableOpacity>
-      <TouchableOpacity>
-        <Text style={styles.button}>Add Menu</Text>
-      </TouchableOpacity>
-      <TouchableOpacity>
-        <Text style={styles.button}>View Orders</Text>
-      </TouchableOpacity>
-      <TouchableOpacity>
-        <Text style={styles.button}>Log Out</Text>
-      </TouchableOpacity>
-    </View>
-  );
+class Setting extends Component {
+  render() {
+    return (
+      <View>
+        <Button
+          style={styles.button}
+          mode='contained'
+          icon='update'
+          >
+          <Text style={styles.text}>Update Account Info</Text>
+        </Button>
+        <Button
+          style={styles.button}
+          mode='contained'
+          icon='add'
+          >
+          <Text style={styles.text}>Add Menu</Text>
+        </Button>
+        <Button
+          style={styles.button}
+          mode='contained'
+          icon='view-list'
+          >
+          <Text style={styles.text}>View Orders</Text>
+        </Button>
+        <Button
+          style={styles.button}
+          mode='contained'
+          icon='clear'
+          >
+          <Text style={styles.text}>Log Out</Text>
+        </Button>
+      </View>
+    );
+  }
 }
 
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: '#4ecdc4',
-    color: 'white',
+    width: 400,
     height: 60,
-    lineHeight: 60,
-    marginTop: 10,
-    textAlign: 'center',
-    width: 300
+    marginTop: 5
   },
+  text: {
+    lineHeight: 40
+  }
 });
 
 export default Setting;

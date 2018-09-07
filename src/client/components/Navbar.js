@@ -1,41 +1,37 @@
 import React, { Component } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native'
 import { withRouter } from 'react-router-native';
+import { Appbar } from 'react-native-paper';
 
 class Navbar extends Component {
   renderBackButton() {
-    if (this.props.location.pathname === '/') {
-      return (
-        <Text />
-      )
+    if (this.props.location.pathname === '/' || this.props.location.pathname === '/home') {
+      return null;
     } else {
-      return (
-        <TouchableOpacity onPress={() => this.props.history.push('/home')}>
-          <Text>Back</Text>
-        </TouchableOpacity>
-      )
+      return <Appbar.BackAction onPress={() => this.props.history.push('/home')}/>;
     }
   }
 
   render() {
     return (
-      <View style={styles.navbar}>
-        <Text style={styles.navbarText}>Scratch</Text>
+      <Appbar
+        style={styles.navbar}
+        >
         {this.renderBackButton()}
-      </View>
+        <Appbar.Content
+          title='Scratch'
+        />
+      </Appbar>
     );
   }
 }
 
 const styles = {
   navbar: {
-    backgroundColor: '#eeeeee',
-    flex: 1,
     position: 'absolute',
     top: 0,
     left: 0,
-    width: '100%',
-    height: 30
+    width: '100%'
   },
   navbarText: {
     textAlign: 'center',

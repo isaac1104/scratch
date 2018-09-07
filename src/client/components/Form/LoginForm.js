@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import { TouchableOpacity, View, Text, StyleSheet } from 'react-native';
+import { TouchableOpacity, View, StyleSheet } from 'react-native';
 import FormField from './FormField';
 import { Field, reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-native';
+import { Button } from 'react-native-paper';
 
 class LoginForm extends Component {
   formSubmit = values => {
@@ -28,9 +29,14 @@ class LoginForm extends Component {
           label='Password'
           secure={true}
         />
-        <TouchableOpacity onPress={handleSubmit(this.formSubmit)}>
-          <Text style={styles.button}>Login</Text>
-        </TouchableOpacity>
+        <Button
+          icon='check-circle'
+          mode='contained'
+          style={styles.button}
+          onPress={handleSubmit(this.formSubmit)}
+          >
+          Login
+        </Button>
       </View>
     );
   }
@@ -38,13 +44,7 @@ class LoginForm extends Component {
 
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: '#4ecdc4',
-    color: 'white',
-    height: 30,
-    lineHeight: 30,
-    marginTop: 10,
-    textAlign: 'center',
-    width: 200
+    marginTop: 10
   },
 });
 
