@@ -1,36 +1,38 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Text, View, TouchableOpacity, StyleSheet } from 'react-native'
 import { Button } from 'react-native-paper';
 
-const Setting = () => {
-  return (
-    <View>
-      <Button
-        style={styles.button}
-        mode='contained'
-        >
-        <Text style={styles.text}>Update Account Info</Text>
-      </Button>
-      <Button
-        style={styles.button}
-        mode='contained'
-        >
-        <Text style={styles.text}>Add Menu</Text>
-      </Button>
-      <Button
-        style={styles.button}
-        mode='contained'
-        >
-        <Text style={styles.text}>View Orders</Text>
-      </Button>
-      <Button
-        style={styles.button}
-        mode='contained'
-        >
-        <Text style={styles.text}>Log Out</Text>
-      </Button>
-    </View>
-  );
+class Setting extends Component {
+  render() {
+    return (
+      <View>
+        <Button
+          style={styles.button}
+          mode='contained'
+          >
+          <Text style={styles.text}>Update Account Info</Text>
+        </Button>
+        <Button
+          style={styles.button}
+          mode='contained'
+          >
+          <Text style={styles.text}>Add Menu</Text>
+        </Button>
+        <Button
+          style={styles.button}
+          mode='contained'
+          >
+          <Text style={styles.text}>View Orders</Text>
+        </Button>
+        <Button
+          style={styles.button}
+          mode='contained'
+          >
+          <Text style={styles.text}>Log Out</Text>
+        </Button>
+      </View>
+    );
+  }
 }
 
 const styles = StyleSheet.create({
