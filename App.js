@@ -3,6 +3,7 @@ import Main from './src/client/components/Main';
 import rootReducer from './src/client/reducers';
 import reduxThunk from 'redux-thunk';
 import { Provider } from 'react-redux';
+import { Provider as PaperProvider } from 'react-native-paper';
 import { createStore, applyMiddleware } from 'redux';
 
 const store = createStore(
@@ -14,7 +15,9 @@ const store = createStore(
 const App = () => {
   return (
     <Provider store={store}>
-      <Main />
+      <PaperProvider>
+        <Main />
+      </PaperProvider>
     </Provider>
   );
 }
