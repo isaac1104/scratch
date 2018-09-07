@@ -31,8 +31,7 @@ const styles = {
     position: 'absolute',
     top: 0,
     left: 0,
-    width: '100%',
-    backgroundColor: '#36393f'
+    width: '100%'
   },
   navbarText: {
     textAlign: 'center',
