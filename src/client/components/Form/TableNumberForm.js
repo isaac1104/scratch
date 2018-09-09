@@ -16,7 +16,7 @@ class LoginForm extends Component {
     const { handleSubmit } = this.props;
 
     return (
-      <View>
+      <View style={styles.container}>
         <Field
           name='tableNumber'
           component={FormField}
@@ -42,6 +42,11 @@ const styles = StyleSheet.create({
   button: {
     marginTop: 10
   },
+  container: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  }
 });
 
 function validate(value) {
