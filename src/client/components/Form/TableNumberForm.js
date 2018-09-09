@@ -9,7 +9,7 @@ import { Button } from 'react-native-paper';
 class TableNumberForm extends Component {
   formSubmit = values => {
     console.log(values);
-    // this.props.history.push('/customer');
+    this.props.history.push('/customer');
   };
 
   render() {
@@ -61,7 +61,8 @@ function validate(value) {
   return errors;
 };
 
-export default reduxForm({
+export default withRouter(
+  reduxForm({
     validate,
     form: 'value'
-})(connect()(TableNumberForm));
+})(connect()(TableNumberForm)));
