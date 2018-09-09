@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
+import { Text, View, StyleSheet, TouchableOpacity, TouchableWithoutFeedback, Keyboard } from 'react-native';
 import { Button, Modal } from 'react-native-paper';
 import TableNumberForm from './Form/TableNumberForm';
 
@@ -46,17 +46,19 @@ class Home extends Component {
           <Text style={styles.text}>Setting</Text>
         </Button>
         <Modal visible={this.state.visible}>
-          <View style={styles.container}>
-            <TableNumberForm />
-            <Button
-              onPress={() => this.hideModal()}
-              mode='contained'
-              icon='clear'
-              style={{ marginTop: 10, backgroundColor: 'tomato' }}
-            >
-              Close
-            </Button>
-          </View>
+          <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
+            <View style={styles.container}>
+              <TableNumberForm />
+              <Button
+                onPress={() => this.hideModal()}
+                mode='contained'
+                icon='clear'
+                style={{ marginTop: 10, backgroundColor: 'tomato' }}
+              >
+                Close
+              </Button>
+            </View>
+          </TouchableWithoutFeedback>
         </Modal>
       </View>
     );

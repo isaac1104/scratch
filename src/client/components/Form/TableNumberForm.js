@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { TouchableOpacity, View, StyleSheet, TouchableWithoutFeedback, Keyboard } from 'react-native';
+import { TouchableOpacity, View, StyleSheet } from 'react-native';
 import FormField from './FormField';
 import { Field, reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
@@ -16,28 +16,24 @@ class TableNumberForm extends Component {
     const { handleSubmit } = this.props;
 
     return (
-      <TouchableWithoutFeedback
-        onPress={() => Keyboard.dismiss()}
-      >
-        <View style={styles.container}>
-          <Field
-            name='tableNumber'
-            component={FormField}
-            label='Table Number'
-            mode='flat'
-            secure={false}
-            keyboardType='number-pad'
-          />
-          <Button
-            icon='check-circle'
-            mode='contained'
-            style={styles.button}
-            onPress={handleSubmit(this.formSubmit)}
-          >
-            Confirm
-          </Button>
-        </View>
-      </TouchableWithoutFeedback>
+      <View style={styles.container}>
+        <Field
+          name='tableNumber'
+          component={FormField}
+          label='Table Number'
+          mode='flat'
+          secure={false}
+          keyboardType='number-pad'
+        />
+        <Button
+          icon='check-circle'
+          mode='contained'
+          style={styles.button}
+          onPress={handleSubmit(this.formSubmit)}
+        >
+          Confirm
+        </Button>
+      </View>
     );
   }
 }
