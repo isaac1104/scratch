@@ -12,11 +12,4 @@ class Login extends Component {
   }
 }
 
-const styles = StyleSheet.create({
-  text: {
-    textAlign: 'center',
-    marginBottom: 10
-  }
-});
-
 export default Login;
