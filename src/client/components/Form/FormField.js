@@ -15,7 +15,7 @@ const FormField = field => {
     <View>
       <TextInput
         {...field.input}
-        mode='outlined'
+        mode={field.mode || 'outlined'}
         label={field.label}
         style={style.input}
         secureTextEntry={field.secure}

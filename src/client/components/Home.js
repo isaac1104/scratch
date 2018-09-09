@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
 import { withRouter } from 'react-router-native';
 import { Button, Modal, Portal } from 'react-native-paper';
+import TableNumberForm from './Form/TableNumberForm';
 
 class Home extends Component {
   state = {
@@ -50,13 +51,7 @@ class Home extends Component {
             visible={this.state.visible}
             onDismiss={() => this.hideModal()}
           >
-            <Text>Input Keypad here</Text>
-            <Button
-              onPress={() => push('/customer')}
-              mode='contained'
-            >
-              <Text>Confirm</Text>
-            </Button>
+            <TableNumberForm />
           </Modal>
         </Portal>
       </View>
