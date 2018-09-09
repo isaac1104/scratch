@@ -49,9 +49,14 @@ class Home extends Component {
           <Modal
             visible={this.state.visible}
             onDismiss={() => this.hideModal()}
-            >
+          >
             <Text>Input Keypad here</Text>
-            <Text>Touch anywhere to close</Text>
+            <Button
+              onPress={() => push('/customer')}
+              mode='contained'
+            >
+              <Text>Confirm</Text>
+            </Button>
           </Modal>
         </Portal>
       </View>
