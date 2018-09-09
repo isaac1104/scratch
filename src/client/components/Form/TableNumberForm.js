@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-native';
 import { Button } from 'react-native-paper';
 
-class LoginForm extends Component {
+class TableNumberForm extends Component {
   formSubmit = values => {
     console.log(values);
     // this.props.history.push('/customer');
@@ -64,4 +64,4 @@ function validate(value) {
 export default reduxForm({
     validate,
     form: 'value'
-})(connect()(LoginForm));
+})(connect()(TableNumberForm));

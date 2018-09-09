@@ -49,9 +49,15 @@ class Home extends Component {
         <Portal>
           <Modal
             visible={this.state.visible}
-            onDismiss={() => this.hideModal()}
           >
             <TableNumberForm />
+            <Button
+              onPress={() => this.hideModal()}
+              mode='contained'
+              icon='clear'
+            >
+              <Text>Close</Text>
+            </Button>
           </Modal>
         </Portal>
       </View>
