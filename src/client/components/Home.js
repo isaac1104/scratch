@@ -26,7 +26,7 @@ class Home extends Component {
           style={styles.button}
           mode='contained'
           icon='restaurant'
-          >
+        >
           <Text style={styles.text}>Kitchen View</Text>
         </Button>
         <Button
@@ -34,7 +34,7 @@ class Home extends Component {
           style={styles.button}
           mode='contained'
           icon='person'
-          >
+        >
           <Text style={styles.text}>Customer View</Text>
         </Button>
         <Button
@@ -42,7 +42,7 @@ class Home extends Component {
           style={styles.button}
           mode='contained'
           icon='settings'
-          >
+        >
           <Text style={styles.text}>Setting</Text>
         </Button>
         <Portal>
