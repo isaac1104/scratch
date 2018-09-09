@@ -19,6 +19,7 @@ const FormField = field => {
         label={field.label}
         style={style.input}
         secureTextEntry={field.secure}
+        keyboardType={field.keyboardType || 'default'}
       />
       <Text style={{ color: 'red' }}>{touched ? error : ''}</Text>
     </View>

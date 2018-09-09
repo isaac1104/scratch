@@ -18,10 +18,12 @@ class LoginForm extends Component {
     return (
       <View>
         <Field
-          name='username'
+          name='tableNumber'
           component={FormField}
-          label='Username'
+          label='Table Number'
+          mode='flat'
           secure={false}
+          keyboardType='number-pad'
         />
         <Button
           icon='check-circle'
@@ -44,8 +46,8 @@ const styles = StyleSheet.create({
 
 function validate(value) {
   const errors = {};
-  if (!value.username) {
-    errors.username = 'Username Required!'
+  if (!value.tableNumber) {
+    errors.tableNumber = 'Table Number Required!'
   }
   return errors;
 };
