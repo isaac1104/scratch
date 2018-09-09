@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
-import { withRouter } from 'react-router-native';
-import { Button, Modal, Portal } from 'react-native-paper';
+import { Text, View, StyleSheet, TouchableOpacity, TouchableWithoutFeedback, Keyboard } from 'react-native';
+import { Button, Modal } from 'react-native-paper';
+import TableNumberForm from './Form/TableNumberForm';
 
 class Home extends Component {
   state = {
@@ -17,7 +17,7 @@ class Home extends Component {
   };
 
   render() {
-    const { push } = this.props.history;
+    const { history: { push } } = this.props;
 
     return (
       <View>
@@ -26,7 +26,7 @@ class Home extends Component {
           style={styles.button}
           mode='contained'
           icon='restaurant'
-          >
+        >
           <Text style={styles.text}>Kitchen View</Text>
         </Button>
         <Button
@@ -34,7 +34,7 @@ class Home extends Component {
           style={styles.button}
           mode='contained'
           icon='person'
-          >
+        >
           <Text style={styles.text}>Customer View</Text>
         </Button>
         <Button
@@ -42,18 +42,24 @@ class Home extends Component {
           style={styles.button}
           mode='contained'
           icon='settings'
-          >
+        >
           <Text style={styles.text}>Setting</Text>
         </Button>
-        <Portal>
-          <Modal
-            visible={this.state.visible}
-            onDismiss={() => this.hideModal()}
-            >
-            <Text>Input Keypad here</Text>
-            <Text>Touch anywhere to close</Text>
-          </Modal>
-        </Portal>
+        <Modal visible={this.state.visible}>
+          <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
+            <View style={styles.container}>
+              <TableNumberForm />
+              <Button
+                onPress={() => this.hideModal()}
+                mode='contained'
+                icon='clear'
+                style={{ marginTop: 10, backgroundColor: 'tomato' }}
+              >
+                Close
+              </Button>
+            </View>
+          </TouchableWithoutFeedback>
+        </Modal>
       </View>
     );
   }
@@ -67,7 +73,12 @@ const styles = StyleSheet.create({
   },
   text: {
     lineHeight: 40
+  },
+  container: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
   }
 });
 
-export default withRouter(Home);
+export default Home;
