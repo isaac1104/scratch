@@ -5,11 +5,13 @@ import { Field, reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-native';
 import { Button } from 'react-native-paper';
+import { saveTableNumber } from '../../actions';
 
 class TableNumberForm extends Component {
-  formSubmit = values => {
-    console.log(values);
-    this.props.history.push('/customer');
+  formSubmit = ({ tableNumber }) => {
+    this.props.saveTableNumber(tableNumber, () => {
+      this.props.history.push('/customer');
+    });
   };
 
   render() {
@@ -61,4 +63,4 @@ export default withRouter(
   reduxForm({
     validate,
     form: 'value'
-})(connect()(TableNumberForm)));
+})(connect(null, { saveTableNumber })(TableNumberForm)));
