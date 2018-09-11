@@ -9,9 +9,8 @@ import { saveTableNumber } from '../../actions';
 
 class TableNumberForm extends Component {
   formSubmit = ({ tableNumber }) => {
-    this.props.saveTableNumber(tableNumber, () => {
-      this.props.history.push('/customer');
-    });
+    this.props.saveTableNumber(tableNumber);
+    this.props.history.push('/customer');
   };
 
   render() {
