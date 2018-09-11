@@ -1,0 +1,1 @@
+export const SAVE_TABLE_NUMBER = 'SAVE_TABLE_NUMBER';
