@@ -5,7 +5,7 @@ import deviceUuidReducer from './device_uuid_reducer';
 
 const rootReducer = combineReducers({
   tableNumber: tableNumberReducer,
-  device_UUID: deviceUuidReducer,
+  device_uuid: deviceUuidReducer,
   form: formReducer
 });
 
