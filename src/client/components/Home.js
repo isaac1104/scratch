@@ -19,7 +19,7 @@ class Home extends Component {
   render() {
     const { history: { push } } = this.props;
     return (
-      <View>
+      <View style={styles.container}>
         <Button
           onPress={() => push('/kitchen')}
           style={styles.button}
@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
     lineHeight: 40
   },
   container: {
-    display: 'flex',
+    flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
   }
