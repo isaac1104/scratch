@@ -30,5 +30,11 @@ export const signin = (info, callback) => async dispatch => {
   dispatch(userAuthRequest());
   const request = await axios.post('http://159.89.143.187/api/login', info);
   const { data } = request;
-  console.log('action: ', data);
+  if (data.message === 'Good') {
+    console.log(data.session_token);
+    dispatch(userAuthSuccess(data.session_token));
+    callback();
+  } else {
+    dispatch(userAuthFail('Wrong Email and Password Combination'));
+  }
 };

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Text, View, StyleSheet, TouchableOpacity, TouchableWithoutFeedback, Keyboard } from 'react-native';
 import { Button, Modal } from 'react-native-paper';
 import TableNumberForm from './Form/TableNumberForm';
+import { connect } from 'react-redux';
 
 class Home extends Component {
   state = {
@@ -17,6 +18,7 @@ class Home extends Component {
   };
 
   render() {
+    console.log(this.props.user);
     const { history: { push } } = this.props;
 
     return (
@@ -81,4 +83,10 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Home;
+function mapStateToProps({ user }) {
+  return {
+    user
+  }
+};
+
+export default connect(mapStateToProps, null)(Home);

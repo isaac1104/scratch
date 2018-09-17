@@ -13,7 +13,9 @@ class LoginForm extends Component {
       ...values,
       uuid: this.props.device_uuid
     };
-    this.props.signin(obj);
+    this.props.signin(obj, () => {
+      this.props.history.push('/home');
+    });
   };
 
   render() {
