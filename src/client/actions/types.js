@@ -1,1 +1,2 @@
 export const SAVE_TABLE_NUMBER = 'SAVE_TABLE_NUMBER';
+export const SAVE_DEVICE_UUID = 'SAVE_DEVICE_UUID';
