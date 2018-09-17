@@ -5,11 +5,17 @@ import { Field, reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-native';
 import { Button } from 'react-native-paper';
+import { signin } from '../../actions';
 
 class LoginForm extends Component {
   formSubmit = values => {
-    console.log(values);
-    this.props.history.push('/home');
+    const obj = {
+      ...values,
+      uuid: this.props.device_uuid
+    };
+    this.props.signin(obj, () => {
+      this.props.history.push('/home');
+    });
   };
 
   render() {
@@ -59,8 +65,14 @@ function validate(value) {
   return errors;
 };
 
+function mapStateToProps({ device_uuid }) {
+  return {
+    device_uuid
+  }
+};
+
 export default withRouter(
   reduxForm({
     validate,
     form: 'value'
-})(connect()(LoginForm)));
+})(connect(mapStateToProps, { signin })(LoginForm)));
