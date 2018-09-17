@@ -15,10 +15,11 @@ class Main extends Component {
         <Fragment>
           <Navbar />
           <Switch>
-            <Route exact path='/' component={Login} />
+            <Route exact path='/' component={CustomerView} />
+            {/* <Route exact path='/' component={Login} /> */}
             <Route exact path='/home' component={Home} />
             <Route exact path='/kitchen' component={KitchenView} />
-            <Route exact path='/customer' component={CustomerView} />
+            {/* <Route exact path='/customer' component={CustomerView} /> */}
             <Route exact path='/setting' component={Setting} />
           </Switch>
         </Fragment>
