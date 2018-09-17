@@ -3,31 +3,40 @@ import { Text, View, StyleSheet } from 'react-native';
 import { Button } from 'react-native-paper';
 
 class Menus extends Component {
+  state = {
+    currentItem: ''
+  };
+
   render() {
+    console.log(this.state.currentItem);
     return (
       <Fragment>
         <View style={styles.sidebar}>
           <Button
             style={styles.button}
             mode='contained'
+            onPress={() => this.setState({ currentItem: 'burgers'})}
           >
             Burgers
           </Button>
           <Button
             style={styles.button}
             mode='contained'
+            onPress={() => this.setState({ currentItem: 'starters'})}
           >
             Starters
           </Button>
           <Button
             style={styles.button}
             mode='contained'
+            onPress={() => this.setState({ currentItem: 'combos'})}
           >
             Combos
           </Button>
           <Button
             style={styles.button}
             mode='contained'
+            onPress={() => this.setState({ currentItem: 'boxes'})}
           >
             Boxes
           </Button>
