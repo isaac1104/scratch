@@ -2,19 +2,11 @@ import React, { Component } from 'react';
 import { Text, View, StyleSheet, TouchableOpacity, TouchableWithoutFeedback, Keyboard } from 'react-native';
 import { Button, Modal } from 'react-native-paper';
 import TableNumberForm from './Form/TableNumberForm';
-import Expo from 'expo';
-import { connect } from 'react-redux';
-import { saveDeviceUUID } from '../actions';
 
 class Home extends Component {
   state = {
     visible: false
   };
-
-  componentDidMount() {
-    const UUID = Expo.Constants.deviceId;
-    this.props.saveDeviceUUID(UUID);
-  }
 
   showModal() {
     this.setState({ visible: true });
@@ -89,10 +81,4 @@ const styles = StyleSheet.create({
   }
 });
 
-function mapStateToProps({ device_uuid }) {
-  return {
-    device_uuid
-  }
-}
-
-export default connect(mapStateToProps, { saveDeviceUUID })(Home);
+export default Home;
