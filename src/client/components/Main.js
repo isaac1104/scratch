@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { View, StyleSheet } from 'react-native';
 import { NativeRouter, Route, Switch } from 'react-router-native';
 import Navbar from './Navbar';
@@ -12,28 +12,20 @@ class Main extends Component {
   render() {
     return (
       <NativeRouter>
-        <View style={styles.container}>
+        <Fragment>
           <Navbar />
           <Switch>
-            <Route exact path='/' component={Login} />
+            <Route exact path='/' component={CustomerView} />
+            {/* <Route exact path='/' component={Login} /> */}
             <Route exact path='/home' component={Home} />
             <Route exact path='/kitchen' component={KitchenView} />
-            <Route exact path='/customer' component={CustomerView} />
+            {/* <Route exact path='/customer' component={CustomerView} /> */}
             <Route exact path='/setting' component={Setting} />
           </Switch>
-        </View>
+        </Fragment>
       </NativeRouter>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
 
 export default Main;

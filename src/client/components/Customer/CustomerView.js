@@ -1,22 +1,24 @@
 import React, { Component } from 'react';
-import { Text, View } from 'react-native'
+import { View, StyleSheet } from 'react-native';
+import Menus from './Menus';
 import { connect } from 'react-redux';
 
 class CustomerView extends Component {
   render() {
     return (
-      <View>
-        <Text>CustomerView</Text>
-        <Text>Table Number is: {this.props.tableNumber}</Text>
+      <View style={styles.container}>
+        <Menus />
       </View>
     );
   }
 };
 
-function mapStateToProps({ tableNumber }) {
-  return {
-    tableNumber
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'center'
   }
-};
+});
 
-export default connect(mapStateToProps, null)(CustomerView);
+export default connect()(CustomerView);
