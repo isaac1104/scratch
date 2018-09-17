@@ -8,7 +8,6 @@ class Menus extends Component {
   };
 
   render() {
-    console.log(this.state.currentItem);
     return (
       <Fragment>
         <View style={styles.sidebar}>
@@ -17,34 +16,34 @@ class Menus extends Component {
             mode='contained'
             onPress={() => this.setState({ currentItem: 'burgers'})}
           >
-            Burgers
+            <Text style={styles.buttonText}>Burgers</Text>
           </Button>
           <Button
             style={styles.button}
             mode='contained'
             onPress={() => this.setState({ currentItem: 'starters'})}
           >
-            Starters
+            <Text style={styles.buttonText}>Starters</Text>
           </Button>
           <Button
             style={styles.button}
             mode='contained'
             onPress={() => this.setState({ currentItem: 'combos'})}
           >
-            Combos
+            <Text style={styles.buttonText}>Combos</Text>
           </Button>
           <Button
             style={styles.button}
             mode='contained'
             onPress={() => this.setState({ currentItem: 'boxes'})}
           >
-            Boxes
+            <Text style={styles.buttonText}>Boxes</Text>
           </Button>
           <Button
             style={styles.summaryButton}
             mode='contained'
           >
-            Order Summary
+            <Text>Order Summary</Text>
           </Button>
         </View>
         <View style={styles.menus}>
@@ -67,6 +66,9 @@ const styles = StyleSheet.create({
   button: {
     marginTop: 10,
     height: 50
+  },
+  buttonText: {
+    lineHeight: 30
   },
   summaryButton: {
     position: 'absolute',
