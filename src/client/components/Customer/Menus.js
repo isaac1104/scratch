@@ -4,7 +4,20 @@ import { Button } from 'react-native-paper';
 
 class Menus extends Component {
   state = {
-    currentItem: ''
+    currentItem: 'burgers'
+  };
+
+  renderMainMenus() {
+    const { currentItem } = this.state;
+    if (currentItem === 'burgers') {
+      return <Text>Burger</Text>
+    } else if (currentItem === 'starters') {
+      return <Text>Starters</Text>
+    } else if (currentItem === 'combos') {
+      return <Text>Combos</Text>
+    } else if (currentItem === 'boxes') {
+      return <Text>Boxes</Text>
+    }
   };
 
   render() {
@@ -47,7 +60,7 @@ class Menus extends Component {
           </Button>
         </View>
         <View style={styles.menus}>
-          <Text>Menu</Text>
+          {this.renderMainMenus()}
         </View>
       </Fragment>
     );
@@ -57,11 +70,14 @@ class Menus extends Component {
 const styles = StyleSheet.create({
   sidebar: {
     width: '30%',
-    backgroundColor: 'powderblue'
+    backgroundColor: '#eeeeee'
   },
   menus: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
     width: '70%',
-    backgroundColor: 'tomato'
+    backgroundColor: '#ffffff'
   },
   button: {
     marginTop: 10,
