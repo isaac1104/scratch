@@ -1,9 +1,26 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native'
 import { withRouter } from 'react-router-native';
 import { Appbar } from 'react-native-paper';
 
 class Navbar extends Component {
+  renderNavbar() {
+    if (this.props.location.pathname === '/customer') {
+      return <View />
+    } else {
+      return (
+        <Appbar
+          style={styles.navbar}
+          >
+          {this.renderBackButton()}
+          <Appbar.Content
+            title='Scratch'
+          />
+        </Appbar>
+      );
+    }
+  }
+
   renderBackButton() {
     if (this.props.location.pathname === '/' || this.props.location.pathname === '/home') {
       return null;
@@ -14,14 +31,9 @@ class Navbar extends Component {
 
   render() {
     return (
-      <Appbar
-        style={styles.navbar}
-        >
-        {this.renderBackButton()}
-        <Appbar.Content
-          title='Scratch'
-        />
-      </Appbar>
+      <Fragment>
+        {this.renderNavbar()}
+      </Fragment>
     );
   }
 }
