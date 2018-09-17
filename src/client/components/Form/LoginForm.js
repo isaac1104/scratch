@@ -13,9 +13,7 @@ class LoginForm extends Component {
       ...values,
       uuid: this.props.device_uuid
     };
-    this.props.signin(obj, () => {
-      this.props.history.push('/home');
-    });
+    this.props.signin(obj);
   };
 
   render() {
@@ -24,9 +22,9 @@ class LoginForm extends Component {
     return (
       <View>
         <Field
-          name='username'
+          name='email'
           component={FormField}
-          label='Username'
+          label='Email'
           secure={false}
         />
         <Field
@@ -56,8 +54,8 @@ const styles = StyleSheet.create({
 
 function validate(value) {
   const errors = {};
-  if (!value.username) {
-    errors.username = 'Username Required!'
+  if (!value.email) {
+    errors.email = 'Email Required!'
   }
   if (!value.password) {
     errors.password = 'Password Required!'

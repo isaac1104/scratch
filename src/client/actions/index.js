@@ -26,9 +26,9 @@ const userAuthFail = error => ({
   payload: error
 });
 
-export const signin = data => async dispatch => {
+export const signin = (info, callback) => async dispatch => {
   dispatch(userAuthRequest());
-  const request = await axios.post('http://159.89.143.187/api/login', data);
+  const request = await axios.post('http://159.89.143.187/api/login', info);
   const { data } = request;
-  console.log(data);
+  console.log('action: ', data);
 };
