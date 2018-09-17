@@ -4,23 +4,28 @@ import FormField from './FormField';
 import { Field, reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-native';
-import { Button } from 'react-native-paper';
+import { Button, Text } from 'react-native-paper';
+import { signin } from '../../actions';
 
 class LoginForm extends Component {
   formSubmit = values => {
-    console.log(values);
-    this.props.history.push('/home');
+    const obj = {
+      ...values,
+      uuid: this.props.device_uuid
+    };
+    this.props.signin(obj, () => {
+      this.props.history.push('/home');
+    });
   };
 
   render() {
-    const { handleSubmit } = this.props;
-
+    const { handleSubmit, user: { isAuthenticating, errorMsg } } = this.props;
     return (
       <View>
         <Field
-          name='username'
+          name='email'
           component={FormField}
-          label='Username'
+          label='Email'
           secure={false}
         />
         <Field
@@ -34,9 +39,11 @@ class LoginForm extends Component {
           mode='contained'
           style={styles.button}
           onPress={handleSubmit(this.formSubmit)}
-          >
-          Login
+          disabled={isAuthenticating ? true : false}
+        >
+          {isAuthenticating ? 'Please Wait' : 'Login'}
         </Button>
+        <Text style={styles.errorMsg}>{errorMsg}</Text>
       </View>
     );
   }
@@ -46,12 +53,16 @@ const styles = StyleSheet.create({
   button: {
     marginTop: 10
   },
+  errorMsg: {
+    color: 'red',
+    fontSize: 12
+  }
 });
 
 function validate(value) {
   const errors = {};
-  if (!value.username) {
-    errors.username = 'Username Required!'
+  if (!value.email) {
+    errors.email = 'Email Required!'
   }
   if (!value.password) {
     errors.password = 'Password Required!'
@@ -59,8 +70,15 @@ function validate(value) {
   return errors;
 };
 
+function mapStateToProps({ device_uuid, user }) {
+  return {
+    device_uuid,
+    user
+  }
+};
+
 export default withRouter(
   reduxForm({
     validate,
     form: 'value'
-})(connect()(LoginForm)));
+})(connect(mapStateToProps, { signin })(LoginForm)));
