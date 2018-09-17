@@ -4,7 +4,7 @@ import FormField from './FormField';
 import { Field, reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-native';
-import { Button } from 'react-native-paper';
+import { Button, Text } from 'react-native-paper';
 import { signin } from '../../actions';
 
 class LoginForm extends Component {
@@ -19,8 +19,7 @@ class LoginForm extends Component {
   };
 
   render() {
-    const { handleSubmit, user: { isAuthenticating } } = this.props;
-
+    const { handleSubmit, user: { isAuthenticating, errorMsg } } = this.props;
     return (
       <View>
         <Field
@@ -44,6 +43,7 @@ class LoginForm extends Component {
         >
           {isAuthenticating ? 'Please Wait' : 'Login'}
         </Button>
+        <Text style={styles.errorMsg}>{errorMsg}</Text>
       </View>
     );
   }
@@ -53,6 +53,10 @@ const styles = StyleSheet.create({
   button: {
     marginTop: 10
   },
+  errorMsg: {
+    color: 'red',
+    fontSize: 12
+  }
 });
 
 function validate(value) {

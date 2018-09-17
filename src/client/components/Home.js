@@ -18,7 +18,6 @@ class Home extends Component {
 
   render() {
     const { history: { push } } = this.props;
-
     return (
       <View>
         <Button

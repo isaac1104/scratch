@@ -1,4 +1,4 @@
-import { USER_AUTH_REQUEST, USER_AUTH_SUCCESS, USER_AUTH_FAIL } from '../actions';
+import { USER_AUTH_REQUEST, USER_AUTH_SUCCESS, USER_AUTH_FAIL } from '../actions/types';
 
 const INITIAL_STATE = {
   isAuthenticating: false,
