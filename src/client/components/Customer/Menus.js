@@ -70,11 +70,14 @@ class Menus extends Component {
 const styles = StyleSheet.create({
   sidebar: {
     width: '30%',
-    backgroundColor: 'powderblue'
+    backgroundColor: '#eeeeee'
   },
   menus: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
     width: '70%',
-    backgroundColor: 'tomato'
+    backgroundColor: '#ffffff'
   },
   button: {
     marginTop: 10,
