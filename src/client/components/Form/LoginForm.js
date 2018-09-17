@@ -19,7 +19,7 @@ class LoginForm extends Component {
   };
 
   render() {
-    const { handleSubmit } = this.props;
+    const { handleSubmit, user: { isAuthenticating } } = this.props;
 
     return (
       <View>
@@ -40,8 +40,9 @@ class LoginForm extends Component {
           mode='contained'
           style={styles.button}
           onPress={handleSubmit(this.formSubmit)}
-          >
-          Login
+          disabled={isAuthenticating ? true : false}
+        >
+          {isAuthenticating ? 'Please Wait' : 'Login'}
         </Button>
       </View>
     );
@@ -65,9 +66,10 @@ function validate(value) {
   return errors;
 };
 
-function mapStateToProps({ device_uuid }) {
+function mapStateToProps({ device_uuid, user }) {
   return {
-    device_uuid
+    device_uuid,
+    user
   }
 };
 
