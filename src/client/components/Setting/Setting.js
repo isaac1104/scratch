@@ -5,7 +5,7 @@ import { Button } from 'react-native-paper';
 class Setting extends Component {
   render() {
     return (
-      <View>
+      <View style={styles.container}>
         <Button
           style={styles.button}
           mode='contained'
@@ -47,6 +47,12 @@ const styles = StyleSheet.create({
   },
   text: {
     lineHeight: 40
+  },
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: 30
   }
 });
 

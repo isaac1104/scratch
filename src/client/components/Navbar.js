@@ -8,7 +8,7 @@ class Navbar extends Component {
     if (this.props.location.pathname === '/' || this.props.location.pathname === '/home') {
       return null;
     } else {
-      return <Appbar.BackAction onPress={() => this.props.history.push('/home')}/>;
+      return <Appbar.BackAction onPress={() => this.props.history.push('/home')} />;
     }
   }
 
