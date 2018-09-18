@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import { FAB, Divider } from 'react-native-paper';
 
 class Sidebar extends Component {
   render() {
@@ -10,20 +11,55 @@ class Sidebar extends Component {
         right: 0,
         top: 0,
         bottom: 0,
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
         width: this.props.isOpen ? '20%' : 0,
+        display: this.props.isOpen ? 'flex' : 'none',
+        justifyContent: 'flex-start',
+        alignItems: 'center',
         backgroundColor: '#eeeeee'
       }
     };
 
     return (
       <View style={style.sidebar}>
-        <Text>Sidebar</Text>
+        <View style={styles.header}>
+          <FAB
+            small
+            style={style.button}
+            icon='add'
+          />
+          <FAB
+            small
+            style={style.button}
+            icon='edit'
+          />
+          <FAB
+            small
+            style={style.button}
+            icon='clear'
+          />
+        </View>
+        <View style={styles.footer}>
+          <Text>Total: $1,000.00</Text>
+        </View>
       </View>
     );
   }
 };
+
+const styles = StyleSheet.create({
+  header: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  footer: {
+    position: 'absolute',
+    bottom: 0,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center'
+  }
+});
 
 export default Sidebar;
