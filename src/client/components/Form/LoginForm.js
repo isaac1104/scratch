@@ -11,7 +11,7 @@ class LoginForm extends Component {
   formSubmit = values => {
     const obj = {
       ...values,
-      uuid: this.props.device_uuid
+      uuid: this.props.uuid
     };
     this.props.signin(obj, () => {
       this.props.saveUserId(values.email);
@@ -74,7 +74,7 @@ function validate(value) {
 
 function mapStateToProps({ deviceInfo, user }) {
   return {
-    device_uuid: deviceInfo.device_uuid,
+    uuid: deviceInfo.uuid,
     user
   }
 };
