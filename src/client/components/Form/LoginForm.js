@@ -41,8 +41,9 @@ class LoginForm extends Component {
           style={styles.button}
           onPress={handleSubmit(this.formSubmit)}
           disabled={isAuthenticating ? true : false}
+          loading={isAuthenticating ? true : false}
         >
-          {isAuthenticating ? 'Please Wait' : 'Login'}
+          Login
         </Button>
         <Text style={styles.errorMsg}>{errorMsg}</Text>
       </View>
