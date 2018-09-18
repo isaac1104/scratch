@@ -13,22 +13,22 @@ class CustomerView extends Component {
     const style = {
       button: {
         position: 'absolute',
+        zIndex: 100,
         right: 0,
-        marginRight: this.state.isOpen ? 110 : 0
+        top: 165,
+        marginRight: this.state.isOpen ? 115 : 0
       }
     };
 
     return (
       <View style={styles.container}>
         <Menus />
-        <View style={styles.buttonContainer}>
-          <FAB
-            onPress={() => this.setState({ isOpen: !this.state.isOpen })}
-            small
-            style={style.button}
-            icon={this.state.isOpen ? 'chevron-right' : 'chevron-left'}
-          />
-        </View>
+        <FAB
+          onPress={() => this.setState({ isOpen: !this.state.isOpen })}
+          small
+          style={style.button}
+          icon={this.state.isOpen ? 'chevron-right' : 'chevron-left'}
+        />
         <Sidebar isOpen={this.state.isOpen} />
       </View>
     );
@@ -40,12 +40,6 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     justifyContent: 'center'
-  },
-  buttonContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    zIndex: 100
   }
 });
 

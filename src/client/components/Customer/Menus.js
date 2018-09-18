@@ -23,7 +23,7 @@ class Menus extends Component {
   render() {
     return (
       <Fragment>
-        <View style={styles.sidebar}>
+        <View style={styles.sidemenu}>
           <Button
             style={styles.button}
             mode='contained'
@@ -68,7 +68,7 @@ class Menus extends Component {
 };
 
 const styles = StyleSheet.create({
-  sidebar: {
+  sidemenu: {
     width: '30%',
     backgroundColor: '#eeeeee'
   },
@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     width: '70%',
-    backgroundColor: '#ffffff'
+    backgroundColor: '#f7fff7'
   },
   button: {
     marginTop: 10,
