@@ -5,15 +5,16 @@ import { Field, reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-native';
 import { Button, Text } from 'react-native-paper';
-import { signin } from '../../actions';
+import { signin, saveUserId } from '../../actions';
 
 class LoginForm extends Component {
   formSubmit = values => {
     const obj = {
       ...values,
-      uuid: this.props.device_uuid
+      uuid: this.props.uuid
     };
     this.props.signin(obj, () => {
+      this.props.saveUserId(values.email);
       this.props.history.push('/home');
     });
   };
@@ -40,8 +41,9 @@ class LoginForm extends Component {
           style={styles.button}
           onPress={handleSubmit(this.formSubmit)}
           disabled={isAuthenticating ? true : false}
+          loading={isAuthenticating ? true : false}
         >
-          {isAuthenticating ? 'Please Wait' : 'Login'}
+          Login
         </Button>
         <Text style={styles.errorMsg}>{errorMsg}</Text>
       </View>
@@ -70,9 +72,9 @@ function validate(value) {
   return errors;
 };
 
-function mapStateToProps({ device_uuid, user }) {
+function mapStateToProps({ deviceInfo, user }) {
   return {
-    device_uuid,
+    uuid: deviceInfo.uuid,
     user
   }
 };
@@ -81,4 +83,4 @@ export default withRouter(
   reduxForm({
     validate,
     form: 'value'
-})(connect(mapStateToProps, { signin })(LoginForm)));
+})(connect(mapStateToProps, { signin, saveUserId })(LoginForm)));

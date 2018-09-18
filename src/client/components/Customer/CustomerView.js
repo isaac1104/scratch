@@ -3,6 +3,7 @@ import { View, StyleSheet } from 'react-native';
 import Menus from './Menus';
 import Sidebar from './Sidebar';
 import { FAB } from 'react-native-paper';
+import { connect } from 'react-redux';
 
 class CustomerView extends Component {
   state = {
@@ -10,6 +11,7 @@ class CustomerView extends Component {
   };
 
   render() {
+    console.log(this.props.deviceInfo);
     const style = {
       button: {
         position: 'absolute',
@@ -43,4 +45,10 @@ const styles = StyleSheet.create({
   }
 });
 
-export default CustomerView;
+function mapStateToProps({ deviceInfo }) {
+  return {
+    deviceInfo
+  }
+};
+
+export default connect(mapStateToProps, null)(CustomerView);
