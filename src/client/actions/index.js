@@ -11,6 +11,11 @@ export const saveDeviceUUID = uuid => ({
   payload: uuid
 });
 
+export const setKitchenView = bool => ({
+  type: types.SET_KITCHEN_VIEW,
+  payload: bool
+});
+
 const userAuthRequest = () => ({
   type: types.USER_AUTH_REQUEST,
   payload: true
