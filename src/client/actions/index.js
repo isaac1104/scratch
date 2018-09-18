@@ -11,7 +11,7 @@ export const saveDeviceUUID = uuid => ({
   payload: uuid
 });
 
-export const saveUserId = id => ({
+const saveUserId = id => ({
   type: types.SAVE_USER_ID,
   payload: id
 });
@@ -42,6 +42,7 @@ export const signin = (userInfo, callback) => async dispatch => {
   const { data } = request;
   if (data.message === 'Good') {
     dispatch(userAuthSuccess(data.session_token));
+    dispatch(saveUserId(userInfo.email));
     callback();
   } else {
     dispatch(userAuthFail('Wrong Email and Password Combination'));
