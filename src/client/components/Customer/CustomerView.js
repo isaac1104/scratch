@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View, StyleSheet, Text } from 'react-native';
 import Menus from './Menus';
 import { connect } from 'react-redux';
-import { Button } from 'react-native-paper';
+import { FAB } from 'react-native-paper';
 
 class CustomerView extends Component {
   state = {
@@ -32,12 +32,12 @@ class CustomerView extends Component {
     return (
       <View style={styles.container}>
         <Menus />
-        <Button
+        <FAB
           onPress={() => this.setState({ isOpen: !this.state.isOpen })}
+          small
           style={style.button}
-        >
-          {this.state.isOpen ? 'Close' : 'Open'}
-        </Button>
+          icon={this.state.isOpen ? 'chevron-right' : 'chevron-left'}
+        />
         <View style={style.sidebar}>
           <Text>Sidebar</Text>
         </View>
