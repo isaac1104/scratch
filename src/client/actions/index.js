@@ -11,6 +11,11 @@ export const saveDeviceUUID = uuid => ({
   payload: uuid
 });
 
+export const saveUserId = id => ({
+  type: types.SAVE_USER_ID,
+  payload: id
+});
+
 export const setKitchenView = bool => ({
   type: types.SET_KITCHEN_VIEW,
   payload: bool
