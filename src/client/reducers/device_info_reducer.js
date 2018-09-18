@@ -2,7 +2,7 @@ import { SAVE_USER_ID, SAVE_DEVICE_UUID, SAVE_TABLE_NUMBER, SET_KITCHEN_VIEW } f
 
 const INITIAL_STATE = {
   user_id: '',
-  device_uuid: '',
+  uuid: '',
   table_number: '',
   kitchen_view: false
 };
@@ -17,7 +17,7 @@ function deviceInfoReducer(state = INITIAL_STATE, action) {
     case SAVE_DEVICE_UUID:
       return {
         ...state,
-        device_uuid: action.payload
+        uuid: action.payload
       };
     case SAVE_TABLE_NUMBER:
       return {
