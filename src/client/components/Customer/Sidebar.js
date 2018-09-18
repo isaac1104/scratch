@@ -38,6 +38,13 @@ class Sidebar extends Component {
             icon='clear'
           />
         </View>
+        <View style={styles.body}>
+          <Text>Burger</Text>
+          <Text>Burger</Text>
+          <Text>Burger</Text>
+          <Text>Burger</Text>
+          <Text>Burger</Text>
+        </View>
         <View style={styles.footer}>
           <Text>Total: $1,000.00</Text>
         </View>
@@ -52,6 +59,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center'
+  },
+  body: {
+    marginTop: 50
   },
   footer: {
     position: 'absolute',
