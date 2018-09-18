@@ -4,7 +4,7 @@ const INITIAL_STATE = {
   user_id: '',
   device_uuid: '',
   table_number: '',
-  isKitchenView: false
+  kitchen_view: false
 };
 
 function deviceInfoReducer(state = INITIAL_STATE, action) {
@@ -27,7 +27,7 @@ function deviceInfoReducer(state = INITIAL_STATE, action) {
     case SET_KITCHEN_VIEW:
       return {
         ...state,
-        isKitchenView: action.payload
+        kitchen_view: action.payload
       };
     default:
       return state;
