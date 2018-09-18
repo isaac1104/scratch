@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import { FAB, Divider } from 'react-native-paper';
+import { FAB, Divider, Button } from 'react-native-paper';
 
 class Sidebar extends Component {
   render() {
@@ -47,6 +47,13 @@ class Sidebar extends Component {
         </View>
         <View style={styles.footer}>
           <Text>Total: $1,000.00</Text>
+          <Button
+            mode='contained'
+            compact
+            style={styles.kitchenButton}
+            >
+            Send to kitchen
+          </Button>
         </View>
       </View>
     );
@@ -69,6 +76,9 @@ const styles = StyleSheet.create({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center'
+  },
+  kitchenButton: {
+    marginTop: 10
   }
 });
 

@@ -6,7 +6,7 @@ import { Appbar } from 'react-native-paper';
 class Navbar extends Component {
   renderNavbar() {
     //change back to /customer once done
-    if (this.props.location.pathname === '/customer') {
+    if (this.props.location.pathname === '/') {
       return <View />
     } else {
       return (
