@@ -1,12 +1,32 @@
-import React from 'react';
-import { Text, View } from 'react-native'
+import React, { Component } from 'react';
+import { Text, View, StyleSheet } from 'react-native'
+import { connect } from 'react-redux';
+import { setKitchenView } from '../../actions';
 
-const KitchenView = () => {
-  return (
-    <View>
-      <Text>KitchenView</Text>
-    </View>
-  );
+class KitchenView extends Component {
+  componentDidMount() {
+    this.props.setKitchenView(true);
+  };
+
+  componentWillUnmount() {
+    this.props.setKitchenView(false);
+  };
+
+  render() {
+    return (
+      <View style={styles.container}>
+        <Text>KitchenView</Text>
+      </View>
+    );
+  }
 }
 
-export default KitchenView;
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
+  }
+});
+
+export default connect(null, { setKitchenView })(KitchenView);
