@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, StatusBar } from 'react-native';
 import { NativeRouter, Route, Switch } from 'react-router-native';
 import Expo from 'expo';
 import Navbar from './Navbar';
@@ -16,6 +16,7 @@ class Main extends Component {
     return (
       <NativeRouter>
         <Fragment>
+          <StatusBar hidden={true} />
           <Navbar />
           <Switch>
             <Route exact path='/' component={CustomerView} />
