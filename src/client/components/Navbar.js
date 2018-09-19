@@ -6,13 +6,13 @@ import { Appbar } from 'react-native-paper';
 class Navbar extends Component {
   renderNavbar() {
     //change back to /customer once done
-    if (this.props.location.pathname === '/') {
+    if (this.props.location.pathname === '/customer') {
       return <View />
     } else {
       return (
         <Appbar
           style={styles.navbar}
-          >
+        >
           {this.renderBackButton()}
           <Appbar.Content
             title='Scratch'
