@@ -39,6 +39,7 @@ class Navbar extends Component {
         <ModalDropdown
           options={['Orange', 'Aliso Viejo']}
           defaultValue='Choose a location'
+          textStyle={{ color: '#fff' }}
           onSelect={(index, value) => console.log(index)}
         />
       );
