@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
-import { View, Text, TouchableOpacity } from 'react-native'
 import { withRouter } from 'react-router-native';
-import { Appbar } from 'react-native-paper';
+import { Appbar} from 'react-native-paper';
+import ModalDropdown from 'react-native-modal-dropdown';
 
 class Navbar extends Component {
   renderNavbar() {
@@ -10,25 +10,40 @@ class Navbar extends Component {
       return <View />
     } else {
       return (
-        <Appbar
-          style={styles.navbar}
-        >
+        <Appbar.Header>
           {this.renderBackButton()}
           <Appbar.Content
             title='Scratch'
+            subtitle='Your order made from scratch'
           />
-        </Appbar>
+          {this.renderLocationSelector()}
+        </Appbar.Header>
       );
     }
   }
 
   renderBackButton() {
-    if (this.props.location.pathname === '/' || this.props.location.pathname === '/home') {
+    const { location: { pathname }, history: { push } } = this.props;
+    if (pathname === '/' || pathname === '/home') {
       return null;
     } else {
-      return <Appbar.BackAction onPress={() => this.props.history.push('/home')} />;
+      return <Appbar.BackAction onPress={() => push('/home')} />;
     }
-  }
+  };
+
+  renderLocationSelector() {
+    if (this.props.location.pathname === '/') {
+      return null;
+    } else {
+      return (
+        <ModalDropdown
+          options={['Orange', 'Aliso Viejo']}
+          defaultValue='Choose a location'
+          onSelect={(index, value) => console.log(index)}
+        />
+      );
+    }
+  };
 
   render() {
     return (
@@ -37,19 +52,6 @@ class Navbar extends Component {
       </Fragment>
     );
   }
-}
-
-const styles = {
-  navbar: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    width: '100%'
-  },
-  navbarText: {
-    textAlign: 'center',
-    lineHeight: 30
-  },
 }
 
 export default withRouter(Navbar);
