@@ -8,7 +8,7 @@ class Navbar extends Component {
     const { pathname } = this.props.location;
     //change back to /customer once done
     if (pathname === '/customer') {
-      return <View />
+      return null;
     } else {
       return (
         <Appbar.Header>
