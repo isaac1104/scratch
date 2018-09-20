@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { withRouter } from 'react-router-native';
-import { Appbar} from 'react-native-paper';
-import ModalDropdown from 'react-native-modal-dropdown';
+import { Appbar } from 'react-native-paper';
+import LocationSelector from './LocationSelector';
 
 class Navbar extends Component {
   renderNavbar() {
@@ -37,16 +37,7 @@ class Navbar extends Component {
     if (this.props.location.pathname === '/') {
       return null;
     } else {
-      return (
-        <ModalDropdown
-          options={['Orange', 'Aliso Viejo']}
-          defaultValue='Orange'
-          defaultIndex={0}
-          style={{ position: 'absolute', right: 30 }}
-          textStyle={{ color: '#fff', textAlign: 'center' }}
-          onSelect={(index, value) => console.log(index)}
-        />
-      );
+      return <LocationSelector />
     }
   };
 
