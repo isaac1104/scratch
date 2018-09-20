@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { Text, View, TouchableOpacity, StyleSheet } from 'react-native'
+import { withRouter } from 'react-router-native';
 import { Button } from 'react-native-paper';
+import { connect } from 'react-redux';
+import { signout } from '../../actions';
 
 class Setting extends Component {
   render() {
@@ -28,6 +31,9 @@ class Setting extends Component {
           <Text style={styles.text}>View Orders</Text>
         </Button>
         <Button
+          onPress={() => this.props.signout(() => {
+            this.props.history.push('/')
+          })}
           style={styles.button}
           mode='contained'
           icon='clear'
@@ -56,4 +62,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Setting;
+export default withRouter(connect(null, { signout })(Setting));

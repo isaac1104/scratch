@@ -1,5 +1,6 @@
 import axios from 'axios';
 import * as types from './types';
+import { SecureStore } from 'expo';
 
 export const saveTableNumber = number => ({
   type: types.SAVE_TABLE_NUMBER,
@@ -41,14 +42,26 @@ const userAuthFail = error => ({
   payload: error
 });
 
+const userAuthSignout = () => ({
+  type: types.USER_AUTH_SIGNOUT,
+  payload: ''
+});
+
 export const signin = (userInfo, callback) => async dispatch => {
   dispatch(userAuthRequest());
   const request = await axios.post('http://159.89.143.187/api/login', userInfo);
   const { data } = request;
   if (data.message === 'Good') {
     dispatch(userAuthSuccess(data.session_token));
+    await SecureStore.setItemAsync('token', data.session_token);
     callback();
   } else {
     dispatch(userAuthFail('Wrong Email and Password Combination'));
   }
+};
+
+export const signout = callback => async dispatch => {
+  await SecureStore.deleteItemAsync('token');
+  dispatch(userAuthSignout());
+  callback();
 };
