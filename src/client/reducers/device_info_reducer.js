@@ -1,4 +1,4 @@
-import { SAVE_USER_ID, SAVE_DEVICE_UUID, SAVE_TABLE_NUMBER, SAVE_LOCATION_ID, SET_KITCHEN_VIEW } from '../actions/types';
+import { SAVE_USER_ID, SAVE_TABLE_NUMBER, SAVE_LOCATION_ID, SET_KITCHEN_VIEW } from '../actions/types';
 import { Constants } from 'expo';
 
 const INITIAL_STATE = {
