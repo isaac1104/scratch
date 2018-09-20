@@ -54,3 +54,11 @@ export const signin = (userInfo, callback) => async dispatch => {
     dispatch(userAuthFail('Wrong Email and Password Combination'));
   }
 };
+
+export const signout = async () => {
+  await SecureStore.deleteItemAsync('token');
+  return {
+    type: types.USER_AUTH_SIGNOUT,
+    payload: ''
+  }
+};
