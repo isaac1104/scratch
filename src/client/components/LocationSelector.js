@@ -5,7 +5,7 @@ import { saveLocationId } from '../actions';
 
 class LocationSelector extends Component {
   render() {
-    console.log(this.props.deviceInfo);
+    console.log('device info: ', this.props.deviceInfo);
     return (
       <ModalDropdown
         options={['Orange', 'Aliso Viejo']}
