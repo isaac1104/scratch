@@ -6,7 +6,7 @@ const INITIAL_STATE = {
   table_number: '',
   kitchen_view: false,
   set_type: '',
-  location_id: ''
+  location_id: 0
 };
 
 function deviceInfoReducer(state = INITIAL_STATE, action) {
