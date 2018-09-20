@@ -42,6 +42,11 @@ const userAuthFail = error => ({
   payload: error
 });
 
+const userAuthSignout = () => ({
+  type: types.USER_AUTH_SIGNOUT,
+  payload: ''
+});
+
 export const signin = (userInfo, callback) => async dispatch => {
   dispatch(userAuthRequest());
   const request = await axios.post('http://159.89.143.187/api/login', userInfo);
@@ -55,10 +60,8 @@ export const signin = (userInfo, callback) => async dispatch => {
   }
 };
 
-export const signout = async () => {
+export const signout = callback => async dispatch => {
   await SecureStore.deleteItemAsync('token');
-  return {
-    type: types.USER_AUTH_SIGNOUT,
-    payload: ''
-  }
+  dispatch(userAuthSignout());
+  callback();
 };
