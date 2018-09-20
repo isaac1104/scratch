@@ -16,6 +16,11 @@ export const saveUserId = id => ({
   payload: id
 });
 
+export const saveLocationId = id => ({
+  type: types.SAVE_LOCATION_ID,
+  payload: id
+});
+
 export const setKitchenView = bool => ({
   type: types.SET_KITCHEN_VIEW,
   payload: bool

@@ -13,6 +13,7 @@ class KitchenView extends Component {
   };
 
   render() {
+    console.log('kitchen view: ', this.props.deviceInfo);
     return (
       <View style={styles.container}>
         <Text>KitchenView</Text>
@@ -28,5 +29,11 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   }
 });
+
+function mapStateToProps({ deviceInfo }) {
+  return {
+    deviceInfo
+  }
+};
 
 export default connect(null, { setKitchenView })(KitchenView);
