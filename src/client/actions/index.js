@@ -7,11 +7,6 @@ export const saveTableNumber = number => ({
   payload: number
 });
 
-export const saveDeviceUUID = uuid => ({
-  type: types.SAVE_DEVICE_UUID,
-  payload: uuid
-});
-
 export const saveUserId = id => ({
   type: types.SAVE_USER_ID,
   payload: id

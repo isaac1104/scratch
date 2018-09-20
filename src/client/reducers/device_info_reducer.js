@@ -1,8 +1,9 @@
 import { SAVE_USER_ID, SAVE_DEVICE_UUID, SAVE_TABLE_NUMBER, SAVE_LOCATION_ID, SET_KITCHEN_VIEW } from '../actions/types';
+import { Constants } from 'expo';
 
 const INITIAL_STATE = {
   user_id: '',
-  uuid: '',
+  uuid: Constants.deviceId,
   table_number: '',
   kitchen_view: false,
   set_type: '',
@@ -15,11 +16,6 @@ function deviceInfoReducer(state = INITIAL_STATE, action) {
       return {
         ...state,
         user_id: action.payload
-      };
-    case SAVE_DEVICE_UUID:
-      return {
-        ...state,
-        uuid: action.payload
       };
     case SAVE_TABLE_NUMBER:
       return {
