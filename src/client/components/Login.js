@@ -3,13 +3,9 @@ import { View, StyleSheet } from 'react-native';
 import { withRouter } from 'react-router-native';
 import LoginForm from './Form/LoginForm';
 import { Constants, SecureStore } from 'expo';
-import { connect } from 'react-redux';
-import { saveDeviceUUID } from '../actions';
 
 class Login extends Component {
   componentDidMount() {
-    const UUID = Constants.deviceId;
-    this.props.saveDeviceUUID(UUID);
     this.checkIfLoggedIn();
   };
 
@@ -37,4 +33,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default withRouter(connect(null, { saveDeviceUUID })(Login));
+export default withRouter(Login);
