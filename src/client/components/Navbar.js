@@ -5,8 +5,9 @@ import ModalDropdown from 'react-native-modal-dropdown';
 
 class Navbar extends Component {
   renderNavbar() {
+    const { pathname } = this.props.location;
     //change back to /customer once done
-    if (this.props.location.pathname === '/customer') {
+    if (pathname === '/customer') {
       return <View />
     } else {
       return (
@@ -15,6 +16,7 @@ class Navbar extends Component {
           <Appbar.Content
             title='Scratch'
             subtitle='Your order made from scratch'
+            style={pathname === '/' ? '' : { marginRight: 50 }}
           />
           {this.renderLocationSelector()}
         </Appbar.Header>
@@ -38,8 +40,9 @@ class Navbar extends Component {
       return (
         <ModalDropdown
           options={['Orange', 'Aliso Viejo']}
-          defaultValue='Choose a location'
-          textStyle={{ color: '#fff' }}
+          defaultValue='Location'
+          style={{ position: 'absolute', right: 30 }}
+          textStyle={{ color: '#fff', textAlign: 'center' }}
           onSelect={(index, value) => console.log(index)}
         />
       );
