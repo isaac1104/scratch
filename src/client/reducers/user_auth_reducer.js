@@ -1,4 +1,4 @@
-import { USER_AUTH_REQUEST, USER_AUTH_SUCCESS, USER_AUTH_FAIL } from '../actions/types';
+import { USER_AUTH_REQUEST, USER_AUTH_SUCCESS, USER_AUTH_FAIL, USER_AUTH_SIGNOUT } from '../actions/types';
 
 const INITIAL_STATE = {
   isAuthenticating: false,
@@ -27,6 +27,8 @@ function userAuthReducer(state = INITIAL_STATE, action) {
         token: '',
         errorMsg: action.payload
       };
+    case USER_AUTH_SIGNOUT:
+      return INITIAL_STATE;
     default:
       return state;
   }
