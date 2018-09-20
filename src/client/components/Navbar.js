@@ -40,7 +40,8 @@ class Navbar extends Component {
       return (
         <ModalDropdown
           options={['Orange', 'Aliso Viejo']}
-          defaultValue='Location'
+          defaultValue='Orange'
+          defaultIndex={0}
           style={{ position: 'absolute', right: 30 }}
           textStyle={{ color: '#fff', textAlign: 'center' }}
           onSelect={(index, value) => console.log(index)}
