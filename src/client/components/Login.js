@@ -6,19 +6,18 @@ import { Constants, SecureStore } from 'expo';
 import { connect } from 'react-redux';
 
 class Login extends Component {
-  // componentDidMount() {
-  //   this.checkIfLoggedIn();
-  // };
-  //
-  // async checkIfLoggedIn() {
-  //   const token = await SecureStore.getItemAsync('token');
-  //   if (token) {
-  //     this.props.history.push('/home');
-  //   }
-  // };
+  componentDidMount() {
+    this.checkIfLoggedIn();
+  };
+
+  checkIfLoggedIn() {
+    const { deviceInfo: { user_id }, history: { push } } = this.props;
+    if (user_id) {
+      push('/home');
+    }
+  };
 
   render() {
-    console.log(this.props);
     return (
       <View style={styles.container}>
         <LoginForm />
@@ -35,10 +34,9 @@ const styles = StyleSheet.create({
   }
 });
 
-function mapStateToProps({ deviceInfo, user }) {
+function mapStateToProps({ deviceInfo }) {
   return {
-    deviceInfo,
-    user
+    deviceInfo
   }
 };
 
