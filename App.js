@@ -12,7 +12,7 @@ import { PersistGate } from 'redux-persist/integration/react';
 const persistConfig = {
   key: 'root',
   storage: AsyncStorage,
-  whitelist: ['deviceInfo', 'user']
+  whitelist: ['deviceInfo', 'user.token']
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

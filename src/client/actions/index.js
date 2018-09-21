@@ -39,7 +39,7 @@ const userAuthFail = error => ({
 
 const userAuthSignout = () => ({
   type: PURGE,
-  key: ['deviceInfo', 'user'],
+  key: ['deviceInfo', 'user.token'],
   result: () => null
 });
 
