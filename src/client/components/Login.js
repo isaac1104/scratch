@@ -3,16 +3,17 @@ import { View, StyleSheet } from 'react-native';
 import { withRouter } from 'react-router-native';
 import LoginForm from './Form/LoginForm';
 import { Constants, SecureStore } from 'expo';
+import { connect } from 'react-redux';
 
 class Login extends Component {
   componentDidMount() {
     this.checkIfLoggedIn();
   };
 
-  async checkIfLoggedIn() {
-    const token = await SecureStore.getItemAsync('token');
-    if (token) {
-      this.props.history.push('/home');
+  checkIfLoggedIn() {
+    const { deviceInfo: { user_id }, history: { push } } = this.props;
+    if (user_id) {
+      push('/home');
     }
   };
 
@@ -33,4 +34,10 @@ const styles = StyleSheet.create({
   }
 });
 
-export default withRouter(Login);
+function mapStateToProps({ deviceInfo }) {
+  return {
+    deviceInfo
+  }
+};
+
+export default withRouter(connect(mapStateToProps, null)(Login));

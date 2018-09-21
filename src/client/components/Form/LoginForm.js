@@ -57,7 +57,8 @@ const styles = StyleSheet.create({
   },
   errorMsg: {
     color: 'red',
-    fontSize: 12
+    fontSize: 12,
+    textAlign: 'center'
   }
 });
 
