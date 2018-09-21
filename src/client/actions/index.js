@@ -51,7 +51,7 @@ export const signin = (userInfo, callback) => async dispatch => {
     dispatch(userAuthSuccess(data.session_token));
     callback();
   } else {
-    dispatch(userAuthFail('Wrong Email and Password Combination'));
+    dispatch(userAuthFail('Invalid Login Credentials'));
   }
 };
 
