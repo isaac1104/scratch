@@ -105,8 +105,7 @@ const styles = StyleSheet.create({
     marginLeft: 10
   },
   summaryButton: {
-    position: 'absolute',
-    bottom: 0,
+    marginTop: 10,
     width: '100%',
     backgroundColor: '#ff4f00'
   },
