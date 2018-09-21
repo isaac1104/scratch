@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { AsyncStorage, ActivityIndicator, StyleSheet } from 'react-native';
 import Main from './src/client/components/Main';
 import rootReducer from './src/client/reducers';
 import reduxThunk from 'redux-thunk';
+import { AsyncStorage, ActivityIndicator, StyleSheet } from 'react-native';
 import { Provider } from 'react-redux';
 import { DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
 import { createStore, applyMiddleware } from 'redux';
@@ -11,7 +11,8 @@ import { PersistGate } from 'redux-persist/integration/react';
 
 const persistConfig = {
   key: 'root',
-  storage: AsyncStorage
+  storage: AsyncStorage,
+  whitelist: ['deviceInfo', 'user']
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
