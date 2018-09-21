@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import { Text, View, StyleSheet, Image } from 'react-native';
+import { Text, View, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { Button } from 'react-native-paper';
 import MenuItem from './MenuItem';
 
@@ -25,13 +25,16 @@ class Menus extends Component {
     return (
       <Fragment>
         <View style={styles.sidemenu}>
-          <Button
+          <TouchableOpacity
             style={styles.button}
-            mode='contained'
             onPress={() => this.setState({ currentItem: 'burgers'})}
-          >
-            <Text style={styles.buttonText}>Burgers</Text>
-          </Button>
+            >
+              <Image
+                source={{uri: 'http://www.pattyburger.com/wp-content/uploads/2016/03/pic-burger.png'}}
+                style={styles.image}
+              />
+              <Text style={styles.buttonText}>Burgers</Text>
+          </TouchableOpacity>
           <Button
             style={styles.button}
             mode='contained'
@@ -84,15 +87,24 @@ const styles = StyleSheet.create({
   },
   button: {
     marginTop: 10,
-    height: 50
+    marginBottom: 10,
+    height: 60,
+    backgroundColor: '#f7fff7'
   },
   buttonText: {
-    lineHeight: 30
+    lineHeight: 60,
+    marginLeft: 10
   },
   summaryButton: {
     position: 'absolute',
     bottom: 0,
     width: '100%'
+  },
+  image: {
+    width: 100,
+    height: 60,
+    position: 'absolute',
+    right: 0
   }
 });
 
