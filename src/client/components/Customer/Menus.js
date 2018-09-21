@@ -83,7 +83,7 @@ class Menus extends Component {
 const styles = StyleSheet.create({
   sidemenu: {
     width: '30%',
-    backgroundColor: '#eeeeee',
+    backgroundColor: '#36393f',
     paddingLeft: 10,
     paddingRight: 10
   },
@@ -107,7 +107,8 @@ const styles = StyleSheet.create({
   summaryButton: {
     position: 'absolute',
     bottom: 0,
-    width: '100%'
+    width: '100%',
+    backgroundColor: '#ff4f00'
   },
   image: {
     width: 100,
