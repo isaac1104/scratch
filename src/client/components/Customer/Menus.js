@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 import { Button } from 'react-native-paper';
+import MenuItem from './MenuItem';
 
 class Menus extends Component {
   state = {
@@ -10,13 +11,13 @@ class Menus extends Component {
   renderMainMenus() {
     const { currentItem } = this.state;
     if (currentItem === 'burgers') {
-      return <Text>Burger</Text>
+      return <MenuItem item='Burgers' />
     } else if (currentItem === 'starters') {
-      return <Text>Starters</Text>
+      return <MenuItem item='Starters' />
     } else if (currentItem === 'combos') {
-      return <Text>Combos</Text>
+      return <MenuItem item='Combos' />
     } else if (currentItem === 'boxes') {
-      return <Text>Boxes</Text>
+      return <MenuItem item='Boxes' />
     }
   };
 
