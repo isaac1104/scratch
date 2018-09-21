@@ -35,27 +35,36 @@ class Menus extends Component {
               />
               <Text style={styles.buttonText}>BURGERS</Text>
           </TouchableOpacity>
-          <Button
+          <TouchableOpacity
             style={styles.button}
-            mode='contained'
             onPress={() => this.setState({ currentItem: 'starters'})}
-          >
-            <Text style={styles.buttonText}>STARTERS</Text>
-          </Button>
-          <Button
+            >
+              <Image
+                source={{uri: 'https://content.freddysusa.com/wp-content/uploads/2016/02/onion-rings.png'}}
+                style={styles.image}
+              />
+              <Text style={styles.buttonText}>STARTERS</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
             style={styles.button}
-            mode='contained'
             onPress={() => this.setState({ currentItem: 'combos'})}
-          >
-            <Text style={styles.buttonText}>COMBOS</Text>
-          </Button>
-          <Button
+            >
+              <Image
+                source={{uri: 'https://burgerbroiler.com/images/Combo1.png'}}
+                style={styles.image}
+              />
+              <Text style={styles.buttonText}>COMBOS</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
             style={styles.button}
-            mode='contained'
             onPress={() => this.setState({ currentItem: 'boxes'})}
-          >
-            <Text style={styles.buttonText}>BOXES</Text>
-          </Button>
+            >
+              <Image
+                source={{uri: 'https://www.burgerim.com/wp-content/uploads/2015/12/Burgerim-Burger-Pack-pack.png'}}
+                style={styles.image}
+              />
+              <Text style={styles.buttonText}>BOXES</Text>
+          </TouchableOpacity>
           <Button
             style={styles.summaryButton}
             mode='contained'
