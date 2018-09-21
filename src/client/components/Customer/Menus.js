@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import { Text, View, StyleSheet, Image, TouchableOpacity } from 'react-native';
+import { Text, View, StyleSheet, Image, TouchableOpacity, ScrollView } from 'react-native';
 import { Button } from 'react-native-paper';
 import MenuItem from './MenuItem';
 
@@ -11,13 +11,49 @@ class Menus extends Component {
   renderMainMenus() {
     const { currentItem } = this.state;
     if (currentItem === 'burgers') {
-      return <MenuItem item='Burgers' />
+      return (
+        <ScrollView>
+          <MenuItem item='burgers' />
+          <MenuItem item='burgers' />
+          <MenuItem item='burgers' />
+          <MenuItem item='burgers' />
+          <MenuItem item='burgers' />
+          <MenuItem item='burgers' />
+        </ScrollView>
+      );
     } else if (currentItem === 'starters') {
-      return <MenuItem item='Starters' />
+      return (
+        <ScrollView>
+          <MenuItem item='starters' />
+          <MenuItem item='starters' />
+          <MenuItem item='starters' />
+          <MenuItem item='starters' />
+          <MenuItem item='starters' />
+          <MenuItem item='starters' />
+        </ScrollView>
+      );
     } else if (currentItem === 'combos') {
-      return <MenuItem item='Combos' />
+      return (
+        <ScrollView>
+          <MenuItem item='combos' />
+          <MenuItem item='combos' />
+          <MenuItem item='combos' />
+          <MenuItem item='combos' />
+          <MenuItem item='combos' />
+          <MenuItem item='combos' />
+        </ScrollView>
+      );
     } else if (currentItem === 'boxes') {
-      return <MenuItem item='Boxes' />
+      return (
+        <ScrollView>
+          <MenuItem item='boxes' />
+          <MenuItem item='boxes' />
+          <MenuItem item='boxes' />
+          <MenuItem item='boxes' />
+          <MenuItem item='boxes' />
+          <MenuItem item='boxes' />
+        </ScrollView>
+      );
     }
   };
 
