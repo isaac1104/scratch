@@ -1,4 +1,5 @@
 import { SAVE_USER_ID, SAVE_TABLE_NUMBER, SAVE_LOCATION_ID, SET_KITCHEN_VIEW } from '../actions/types';
+import { PURGE } from 'redux-persist';
 import { Constants } from 'expo';
 
 const INITIAL_STATE = {
@@ -32,6 +33,8 @@ function deviceInfoReducer(state = INITIAL_STATE, action) {
         ...state,
         kitchen_view: action.payload
       };
+    case PURGE:
+      return INITIAL_STATE;
     default:
       return state;
   }

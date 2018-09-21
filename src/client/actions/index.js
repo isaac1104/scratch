@@ -1,5 +1,6 @@
 import axios from 'axios';
 import * as types from './types';
+import { PURGE } from 'redux-persist';
 
 export const saveTableNumber = number => ({
   type: types.SAVE_TABLE_NUMBER,
@@ -37,8 +38,9 @@ const userAuthFail = error => ({
 });
 
 const userAuthSignout = () => ({
-  type: types.USER_AUTH_SIGNOUT,
-  payload: ''
+  type: PURGE,
+  key: ['deviceInfo', 'user'],
+  result: () => null
 });
 
 export const signin = (userInfo, callback) => async dispatch => {
@@ -54,7 +56,6 @@ export const signin = (userInfo, callback) => async dispatch => {
 };
 
 export const signout = callback => async dispatch => {
-  await SecureStore.deleteItemAsync('token');
   dispatch(userAuthSignout());
   callback();
 };
