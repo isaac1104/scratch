@@ -15,7 +15,7 @@ class Sidebar extends Component {
         display: this.props.isOpen ? 'flex' : 'none',
         justifyContent: 'flex-start',
         alignItems: 'center',
-        backgroundColor: '#eeeeee'
+        backgroundColor: '#ff4f00'
       }
     };
 
