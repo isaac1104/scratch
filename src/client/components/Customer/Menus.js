@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import { Text, View, StyleSheet, Image } from 'react-native';
 import { Button } from 'react-native-paper';
 import MenuItem from './MenuItem';
 
@@ -71,7 +71,9 @@ class Menus extends Component {
 const styles = StyleSheet.create({
   sidemenu: {
     width: '30%',
-    backgroundColor: '#eeeeee'
+    backgroundColor: '#eeeeee',
+    paddingLeft: 10,
+    paddingRight: 10
   },
   menus: {
     flex: 1,
