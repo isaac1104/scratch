@@ -18,7 +18,6 @@ class Login extends Component {
   };
 
   render() {
-    console.log(this.props.user);
     return (
       <View style={styles.container}>
         <LoginForm />
@@ -35,10 +34,9 @@ const styles = StyleSheet.create({
   }
 });
 
-function mapStateToProps({ deviceInfo, user }) {
+function mapStateToProps({ deviceInfo }) {
   return {
-    deviceInfo,
-    user
+    deviceInfo
   }
 };
 
