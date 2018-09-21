@@ -1,29 +1,35 @@
 import React, { Component, Fragment } from 'react';
-import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
+import { Text, ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
 
 class MenuItem extends Component {
   render() {
     return (
-      <Fragment>
+      <ScrollView>
         <TouchableOpacity style={styles.button}>
           <Text style={styles.text}>{this.props.item}</Text>
+          <Text style={styles.text}>Description</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.button}>
           <Text style={styles.text}>{this.props.item}</Text>
+          <Text style={styles.text}>Description</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.button}>
           <Text style={styles.text}>{this.props.item}</Text>
+          <Text style={styles.text}>Description</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.button}>
           <Text style={styles.text}>{this.props.item}</Text>
+          <Text style={styles.text}>Description</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.button}>
           <Text style={styles.text}>{this.props.item}</Text>
+          <Text style={styles.text}>Description</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.button}>
           <Text style={styles.text}>{this.props.item}</Text>
+          <Text style={styles.text}>Description</Text>
         </TouchableOpacity>
-      </Fragment>
+      </ScrollView>
     );
   }
 }
@@ -31,13 +37,15 @@ class MenuItem extends Component {
 const styles = StyleSheet.create({
   button: {
     width: 300,
-    height: 50,
+    height: 80,
     backgroundColor: '#2f3136',
-    marginBottom: 10
+    marginBottom: 10,
+    marginTop: 10
   },
   text: {
-    textAlign: 'right',
-    lineHeight: 50,
+    textAlign: 'left',
+    marginLeft: 10,
+    lineHeight: 30,
     color: '#ffffff'
   }
 });
