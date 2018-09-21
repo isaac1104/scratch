@@ -5,7 +5,7 @@ class MenuItem extends Component {
   render() {
     return (
       <ScrollView>
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.itemBox}>
           <Text style={styles.text}>{this.props.item}</Text>
           <Text style={styles.text}>Description</Text>
           <Image
@@ -13,7 +13,7 @@ class MenuItem extends Component {
             style={styles.image}
           />
         </TouchableOpacity>
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.itemBox}>
           <Text style={styles.text}>{this.props.item}</Text>
           <Text style={styles.text}>Description</Text>
           <Image
@@ -21,7 +21,7 @@ class MenuItem extends Component {
             style={styles.image}
           />
         </TouchableOpacity>
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.itemBox}>
           <Text style={styles.text}>{this.props.item}</Text>
           <Text style={styles.text}>Description</Text>
           <Image
@@ -29,7 +29,7 @@ class MenuItem extends Component {
             style={styles.image}
           />
         </TouchableOpacity>
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.itemBox}>
           <Text style={styles.text}>{this.props.item}</Text>
           <Text style={styles.text}>Description</Text>
           <Image
@@ -37,7 +37,7 @@ class MenuItem extends Component {
             style={styles.image}
           />
         </TouchableOpacity>
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.itemBox}>
           <Text style={styles.text}>{this.props.item}</Text>
           <Text style={styles.text}>Description</Text>
           <Image
@@ -45,7 +45,7 @@ class MenuItem extends Component {
             style={styles.image}
           />
         </TouchableOpacity>
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.itemBox}>
           <Text style={styles.text}>{this.props.item}</Text>
           <Text style={styles.text}>Description</Text>
           <Image
@@ -59,22 +59,24 @@ class MenuItem extends Component {
 }
 
 const styles = StyleSheet.create({
-  button: {
+  itemBox: {
     width: 300,
     height: 80,
-    backgroundColor: '#2f3136',
+    backgroundColor: '#ffffff',
     marginBottom: 10,
-    marginTop: 10
+    marginTop: 10,
+    shadowOffset: { width: 6,  height: 6 },
+    shadowColor: 'black',
+    shadowOpacity: 0.7
   },
   text: {
     textAlign: 'left',
     marginLeft: 10,
-    lineHeight: 30,
-    color: '#ffffff'
+    lineHeight: 30
   },
   image: {
     width: 100,
-    height: 100,
+    height: 80,
     position: 'absolute',
     right: 0
   }
