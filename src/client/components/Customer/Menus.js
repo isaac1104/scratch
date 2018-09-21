@@ -33,28 +33,28 @@ class Menus extends Component {
                 source={{uri: 'http://www.pattyburger.com/wp-content/uploads/2016/03/pic-burger.png'}}
                 style={styles.image}
               />
-              <Text style={styles.buttonText}>Burgers</Text>
+              <Text style={styles.buttonText}>BURGERS</Text>
           </TouchableOpacity>
           <Button
             style={styles.button}
             mode='contained'
             onPress={() => this.setState({ currentItem: 'starters'})}
           >
-            <Text style={styles.buttonText}>Starters</Text>
+            <Text style={styles.buttonText}>STARTERS</Text>
           </Button>
           <Button
             style={styles.button}
             mode='contained'
             onPress={() => this.setState({ currentItem: 'combos'})}
           >
-            <Text style={styles.buttonText}>Combos</Text>
+            <Text style={styles.buttonText}>COMBOS</Text>
           </Button>
           <Button
             style={styles.button}
             mode='contained'
             onPress={() => this.setState({ currentItem: 'boxes'})}
           >
-            <Text style={styles.buttonText}>Boxes</Text>
+            <Text style={styles.buttonText}>BOXES</Text>
           </Button>
           <Button
             style={styles.summaryButton}

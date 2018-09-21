@@ -6,7 +6,7 @@ class MenuItem extends Component {
     return (
       <ScrollView>
         <TouchableOpacity style={styles.itemBox}>
-          <Text style={styles.text}>{this.props.item}</Text>
+          <Text style={styles.text}>{this.props.item.toUpperCase()}</Text>
           <Text style={styles.text}>Description</Text>
           <Image
             source={{uri: 'https://cdn.arstechnica.net/wp-content/uploads/2018/08/IF-Burger-800x603.jpg'}}
@@ -14,7 +14,7 @@ class MenuItem extends Component {
           />
         </TouchableOpacity>
         <TouchableOpacity style={styles.itemBox}>
-          <Text style={styles.text}>{this.props.item}</Text>
+          <Text style={styles.text}>{this.props.item.toUpperCase()}</Text>
           <Text style={styles.text}>Description</Text>
           <Image
             source={{uri: 'https://cdn.arstechnica.net/wp-content/uploads/2018/08/IF-Burger-800x603.jpg'}}
@@ -22,7 +22,7 @@ class MenuItem extends Component {
           />
         </TouchableOpacity>
         <TouchableOpacity style={styles.itemBox}>
-          <Text style={styles.text}>{this.props.item}</Text>
+          <Text style={styles.text}>{this.props.item.toUpperCase()}</Text>
           <Text style={styles.text}>Description</Text>
           <Image
             source={{uri: 'https://cdn.arstechnica.net/wp-content/uploads/2018/08/IF-Burger-800x603.jpg'}}
@@ -30,7 +30,7 @@ class MenuItem extends Component {
           />
         </TouchableOpacity>
         <TouchableOpacity style={styles.itemBox}>
-          <Text style={styles.text}>{this.props.item}</Text>
+          <Text style={styles.text}>{this.props.item.toUpperCase()}</Text>
           <Text style={styles.text}>Description</Text>
           <Image
             source={{uri: 'https://cdn.arstechnica.net/wp-content/uploads/2018/08/IF-Burger-800x603.jpg'}}
@@ -38,7 +38,7 @@ class MenuItem extends Component {
           />
         </TouchableOpacity>
         <TouchableOpacity style={styles.itemBox}>
-          <Text style={styles.text}>{this.props.item}</Text>
+          <Text style={styles.text}>{this.props.item.toUpperCase()}</Text>
           <Text style={styles.text}>Description</Text>
           <Image
             source={{uri: 'https://cdn.arstechnica.net/wp-content/uploads/2018/08/IF-Burger-800x603.jpg'}}
@@ -46,7 +46,7 @@ class MenuItem extends Component {
           />
         </TouchableOpacity>
         <TouchableOpacity style={styles.itemBox}>
-          <Text style={styles.text}>{this.props.item}</Text>
+          <Text style={styles.text}>{this.props.item.toUpperCase()}</Text>
           <Text style={styles.text}>Description</Text>
           <Image
             source={{uri: 'https://cdn.arstechnica.net/wp-content/uploads/2018/08/IF-Burger-800x603.jpg'}}
