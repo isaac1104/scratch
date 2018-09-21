@@ -48,7 +48,7 @@ export const signin = (userInfo, callback) => async dispatch => {
   const { data } = request;
   if (data.message === 'Good') {
     dispatch(userAuthSuccess(data.session_token));
-    await SecureStore.setItemAsync('token', data.session_token);
+    // await SecureStore.setItemAsync('token', data.session_token);
     callback();
   } else {
     dispatch(userAuthFail('Wrong Email and Password Combination'));
