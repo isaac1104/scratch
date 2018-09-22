@@ -1,11 +1,12 @@
 import React, { Component, Fragment } from 'react';
-import { Text, View, StyleSheet, Image, TouchableOpacity, ScrollView } from 'react-native';
+import { Text, View, StyleSheet, Image, TouchableOpacity, ScrollView, ActivityIndicator } from 'react-native';
 import { Button } from 'react-native-paper';
 import MenuItem from './MenuItem';
 
 class Menus extends Component {
   state = {
-    currentItem: 'burgers'
+    currentItem: 'burgers',
+    loading: false
   };
 
   renderMainMenus() {
@@ -64,42 +65,54 @@ class Menus extends Component {
           <TouchableOpacity
             style={styles.button}
             onPress={() => this.setState({ currentItem: 'burgers'})}
-            >
-              <Image
-                source={{uri: 'http://www.pattyburger.com/wp-content/uploads/2016/03/pic-burger.png'}}
-                style={styles.image}
-              />
-              <Text style={styles.buttonText}>BURGERS</Text>
+          >
+            <Image
+              source={{uri: 'http://www.pattyburger.com/wp-content/uploads/2016/03/pic-burger.png'}}
+              style={styles.image}
+              onLoadStart={() => this.setState({ loading: true })}
+              onLoadEnd={() => this.setState({ loading: false })}
+            />
+            {this.state.loading && <ActivityIndicator size='large' style={styles.image} color='#222222' />}
+            <Text style={styles.buttonText}>BURGERS</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.button}
             onPress={() => this.setState({ currentItem: 'starters'})}
-            >
-              <Image
-                source={{uri: 'https://content.freddysusa.com/wp-content/uploads/2016/02/onion-rings.png'}}
-                style={styles.image}
-              />
-              <Text style={styles.buttonText}>STARTERS</Text>
+          >
+            <Image
+              source={{uri: 'https://content.freddysusa.com/wp-content/uploads/2016/02/onion-rings.png'}}
+              style={styles.image}
+              onLoadStart={() => this.setState({ loading: true })}
+              onLoadEnd={() => this.setState({ loading: false })}
+            />
+            {this.state.loading && <ActivityIndicator size='large' style={styles.image} color='#222222' />}
+            <Text style={styles.buttonText}>STARTERS</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.button}
             onPress={() => this.setState({ currentItem: 'combos'})}
-            >
-              <Image
-                source={{uri: 'https://burgerbroiler.com/images/Combo1.png'}}
-                style={styles.image}
-              />
-              <Text style={styles.buttonText}>COMBOS</Text>
+          >
+            <Image
+              source={{uri: 'https://burgerbroiler.com/images/Combo1.png'}}
+              style={styles.image}
+              onLoadStart={() => this.setState({ loading: true })}
+              onLoadEnd={() => this.setState({ loading: false })}
+            />
+            {this.state.loading && <ActivityIndicator size='large' style={styles.image} color='#222222' />}
+            <Text style={styles.buttonText}>COMBOS</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.button}
             onPress={() => this.setState({ currentItem: 'boxes'})}
-            >
-              <Image
-                source={{uri: 'https://www.burgerim.com/wp-content/uploads/2015/12/Burgerim-Burger-Pack-pack.png'}}
-                style={styles.image}
-              />
-              <Text style={styles.buttonText}>BOXES</Text>
+          >
+            <Image
+              source={{uri: 'https://www.burgerim.com/wp-content/uploads/2015/12/Burgerim-Burger-Pack-pack.png'}}
+              style={styles.image}
+              onLoadStart={() => this.setState({ loading: true })}
+              onLoadEnd={() => this.setState({ loading: false })}
+            />
+            {this.state.loading && <ActivityIndicator size='large' style={styles.image} color='#222222' />}
+            <Text style={styles.buttonText}>BOXES</Text>
           </TouchableOpacity>
           <Button
             style={styles.summaryButton}
