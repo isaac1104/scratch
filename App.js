@@ -7,12 +7,17 @@ import { Provider } from 'react-redux';
 import { DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
 import { createStore, applyMiddleware } from 'redux';
 import { persistStore, persistReducer } from 'redux-persist';
+import { createWhitelistFilter, createBlacklistFilter } from 'redux-persist-transform-filter';
 import { PersistGate } from 'redux-persist/integration/react';
 
 const persistConfig = {
   key: 'root',
   storage: AsyncStorage,
-  whitelist: ['deviceInfo', 'user.token']
+  blacklist: ['form'],
+  transforms: [
+    createWhitelistFilter('deviceInfo'),
+    createWhitelistFilter('user', 'token')
+  ]
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

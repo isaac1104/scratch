@@ -7,6 +7,7 @@ class LocationSelector extends Component {
   render() {
     const { location_id } = this.props.deviceInfo;
     console.log('device info: ', this.props.deviceInfo);
+    console.log(this.props.user);
     return (
       <ModalDropdown
         options={['Orange', 'Aliso Viejo']}
@@ -20,9 +21,10 @@ class LocationSelector extends Component {
   }
 }
 
-function mapStateToProps({ deviceInfo }) {
+function mapStateToProps({ deviceInfo, user }) {
   return {
-    deviceInfo
+    deviceInfo,
+    user
   }
 }
 
