@@ -7,7 +7,7 @@ import { Provider } from 'react-redux';
 import { DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
 import { createStore, applyMiddleware } from 'redux';
 import { persistStore, persistReducer } from 'redux-persist';
-import { createWhitelistFilter, createBlacklistFilter } from 'redux-persist-transform-filter';
+import { createWhitelistFilter } from 'redux-persist-transform-filter';
 import { PersistGate } from 'redux-persist/integration/react';
 
 const persistConfig = {
