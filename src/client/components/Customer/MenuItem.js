@@ -1,13 +1,23 @@
 import React, { Component, Fragment } from 'react';
-import { Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
+import { Text, StyleSheet, TouchableOpacity, Image, ActivityIndicator } from 'react-native';
 
 class MenuItem extends Component {
+  state = {
+    loading: false
+  };
+
   render() {
     return (
       <TouchableOpacity style={styles.itemBox}>
         <Text style={styles.text}>{this.props.item.toUpperCase()}</Text>
         <Text style={styles.text}>Description</Text>
-        <Image source={{uri: this.props.image}} style={styles.image} />
+        <Image
+          source={{ uri: this.props.image }}
+          style={styles.image}
+          onLoadStart={() => this.setState({ loading: true })}
+          onLoadEnd={() => this.setState({ loading: false })}
+        />
+        {this.state.loading && <ActivityIndicator size='large' style={styles.image} color='#222222' />}
       </TouchableOpacity>
     );
   }
