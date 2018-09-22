@@ -2,30 +2,12 @@ import React, { Component, Fragment } from 'react';
 import { Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
 
 class MenuItem extends Component {
-  renderItemImage() {
-    const { item } = this.props;
-    if (item === 'burgers') {
-      return <Image source={{uri: 'https://cdn.arstechnica.net/wp-content/uploads/2018/08/IF-Burger-800x603.jpg'}} style={styles.image} />;
-    }
-    if (item === 'starters') {
-      return <Image source={{uri: 'http://itzzapitzza.pk/wp-content/uploads/2017/12/Wings.png'}} style={styles.image} />;
-    }
-    if (item === 'combos') {
-      return <Image source={{uri: 'https://burgerbroiler.com/images/Combo1.png'}} style={styles.image} />;
-    }
-    if (item === 'boxes') {
-      return <Image source={{uri: 'https://www.burgerim.com/wp-content/uploads/2015/12/Burgerim-Burger-Pack-pack.png'}} style={styles.image} />;
-    }
-
-    return <Image source={{uri: 'https://cdn.arstechnica.net/wp-content/uploads/2018/08/IF-Burger-800x603.jpg'}} style={styles.image} />;
-  };
-
   render() {
     return (
       <TouchableOpacity style={styles.itemBox}>
         <Text style={styles.text}>{this.props.item.toUpperCase()}</Text>
         <Text style={styles.text}>Description</Text>
-        {this.renderItemImage()}
+        <Image source={{uri: this.props.image}} style={styles.image} />
       </TouchableOpacity>
     );
   }

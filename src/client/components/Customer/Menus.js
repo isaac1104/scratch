@@ -13,45 +13,45 @@ class Menus extends Component {
     if (currentItem === 'burgers') {
       return (
         <ScrollView>
-          <MenuItem item='burgers' />
-          <MenuItem item='burgers' />
-          <MenuItem item='burgers' />
-          <MenuItem item='burgers' />
-          <MenuItem item='burgers' />
-          <MenuItem item='burgers' />
+          <MenuItem item='burgers' image='https://cdn.arstechnica.net/wp-content/uploads/2018/08/IF-Burger-800x603.jpg' />
+          <MenuItem item='burgers' image='https://cdn.arstechnica.net/wp-content/uploads/2018/08/IF-Burger-800x603.jpg' />
+          <MenuItem item='burgers' image='https://cdn.arstechnica.net/wp-content/uploads/2018/08/IF-Burger-800x603.jpg' />
+          <MenuItem item='burgers' image='https://cdn.arstechnica.net/wp-content/uploads/2018/08/IF-Burger-800x603.jpg' />
+          <MenuItem item='burgers' image='https://cdn.arstechnica.net/wp-content/uploads/2018/08/IF-Burger-800x603.jpg' />
+          <MenuItem item='burgers' image='https://cdn.arstechnica.net/wp-content/uploads/2018/08/IF-Burger-800x603.jpg' />
         </ScrollView>
       );
     } else if (currentItem === 'starters') {
       return (
         <ScrollView>
-          <MenuItem item='starters' />
-          <MenuItem item='starters' />
-          <MenuItem item='starters' />
-          <MenuItem item='starters' />
-          <MenuItem item='starters' />
-          <MenuItem item='starters' />
+          <MenuItem item='starters' image='http://itzzapitzza.pk/wp-content/uploads/2017/12/Wings.png' />
+          <MenuItem item='starters' image='http://itzzapitzza.pk/wp-content/uploads/2017/12/Wings.png' />
+          <MenuItem item='starters' image='http://itzzapitzza.pk/wp-content/uploads/2017/12/Wings.png' />
+          <MenuItem item='starters' image='http://itzzapitzza.pk/wp-content/uploads/2017/12/Wings.png' />
+          <MenuItem item='starters' image='http://itzzapitzza.pk/wp-content/uploads/2017/12/Wings.png' />
+          <MenuItem item='starters' image='http://itzzapitzza.pk/wp-content/uploads/2017/12/Wings.png' />
         </ScrollView>
       );
     } else if (currentItem === 'combos') {
       return (
         <ScrollView>
-          <MenuItem item='combos' />
-          <MenuItem item='combos' />
-          <MenuItem item='combos' />
-          <MenuItem item='combos' />
-          <MenuItem item='combos' />
-          <MenuItem item='combos' />
+          <MenuItem item='combos' image='https://burgerbroiler.com/images/Combo1.png' />
+          <MenuItem item='combos' image='https://burgerbroiler.com/images/Combo1.png' />
+          <MenuItem item='combos' image='https://burgerbroiler.com/images/Combo1.png' />
+          <MenuItem item='combos' image='https://burgerbroiler.com/images/Combo1.png' />
+          <MenuItem item='combos' image='https://burgerbroiler.com/images/Combo1.png' />
+          <MenuItem item='combos' image='https://burgerbroiler.com/images/Combo1.png' />
         </ScrollView>
       );
     } else if (currentItem === 'boxes') {
       return (
         <ScrollView>
-          <MenuItem item='boxes' />
-          <MenuItem item='boxes' />
-          <MenuItem item='boxes' />
-          <MenuItem item='boxes' />
-          <MenuItem item='boxes' />
-          <MenuItem item='boxes' />
+          <MenuItem item='boxes' image='https://www.burgerim.com/wp-content/uploads/2015/12/Burgerim-Burger-Pack-pack.png' />
+          <MenuItem item='boxes' image='https://www.burgerim.com/wp-content/uploads/2015/12/Burgerim-Burger-Pack-pack.png' />
+          <MenuItem item='boxes' image='https://www.burgerim.com/wp-content/uploads/2015/12/Burgerim-Burger-Pack-pack.png' />
+          <MenuItem item='boxes' image='https://www.burgerim.com/wp-content/uploads/2015/12/Burgerim-Burger-Pack-pack.png' />
+          <MenuItem item='boxes' image='https://www.burgerim.com/wp-content/uploads/2015/12/Burgerim-Burger-Pack-pack.png' />
+          <MenuItem item='boxes' image='https://www.burgerim.com/wp-content/uploads/2015/12/Burgerim-Burger-Pack-pack.png' />
         </ScrollView>
       );
     }
