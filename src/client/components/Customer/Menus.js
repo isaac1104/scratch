@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import { Text, View, StyleSheet, Image, TouchableOpacity, ScrollView } from 'react-native';
 import { Button } from 'react-native-paper';
+import MenuItem from './MenuItem';
 
 class Menus extends Component {
   state = {
@@ -10,13 +11,49 @@ class Menus extends Component {
   renderMainMenus() {
     const { currentItem } = this.state;
     if (currentItem === 'burgers') {
-      return <Text>Burger</Text>
+      return (
+        <ScrollView>
+          <MenuItem item='burgers' />
+          <MenuItem item='burgers' />
+          <MenuItem item='burgers' />
+          <MenuItem item='burgers' />
+          <MenuItem item='burgers' />
+          <MenuItem item='burgers' />
+        </ScrollView>
+      );
     } else if (currentItem === 'starters') {
-      return <Text>Starters</Text>
+      return (
+        <ScrollView>
+          <MenuItem item='starters' />
+          <MenuItem item='starters' />
+          <MenuItem item='starters' />
+          <MenuItem item='starters' />
+          <MenuItem item='starters' />
+          <MenuItem item='starters' />
+        </ScrollView>
+      );
     } else if (currentItem === 'combos') {
-      return <Text>Combos</Text>
+      return (
+        <ScrollView>
+          <MenuItem item='combos' />
+          <MenuItem item='combos' />
+          <MenuItem item='combos' />
+          <MenuItem item='combos' />
+          <MenuItem item='combos' />
+          <MenuItem item='combos' />
+        </ScrollView>
+      );
     } else if (currentItem === 'boxes') {
-      return <Text>Boxes</Text>
+      return (
+        <ScrollView>
+          <MenuItem item='boxes' />
+          <MenuItem item='boxes' />
+          <MenuItem item='boxes' />
+          <MenuItem item='boxes' />
+          <MenuItem item='boxes' />
+          <MenuItem item='boxes' />
+        </ScrollView>
+      );
     }
   };
 
@@ -24,34 +61,46 @@ class Menus extends Component {
     return (
       <Fragment>
         <View style={styles.sidemenu}>
-          <Button
+          <TouchableOpacity
             style={styles.button}
-            mode='contained'
             onPress={() => this.setState({ currentItem: 'burgers'})}
-          >
-            <Text style={styles.buttonText}>Burgers</Text>
-          </Button>
-          <Button
+            >
+              <Image
+                source={{uri: 'http://www.pattyburger.com/wp-content/uploads/2016/03/pic-burger.png'}}
+                style={styles.image}
+              />
+              <Text style={styles.buttonText}>BURGERS</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
             style={styles.button}
-            mode='contained'
             onPress={() => this.setState({ currentItem: 'starters'})}
-          >
-            <Text style={styles.buttonText}>Starters</Text>
-          </Button>
-          <Button
+            >
+              <Image
+                source={{uri: 'https://content.freddysusa.com/wp-content/uploads/2016/02/onion-rings.png'}}
+                style={styles.image}
+              />
+              <Text style={styles.buttonText}>STARTERS</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
             style={styles.button}
-            mode='contained'
             onPress={() => this.setState({ currentItem: 'combos'})}
-          >
-            <Text style={styles.buttonText}>Combos</Text>
-          </Button>
-          <Button
+            >
+              <Image
+                source={{uri: 'https://burgerbroiler.com/images/Combo1.png'}}
+                style={styles.image}
+              />
+              <Text style={styles.buttonText}>COMBOS</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
             style={styles.button}
-            mode='contained'
             onPress={() => this.setState({ currentItem: 'boxes'})}
-          >
-            <Text style={styles.buttonText}>Boxes</Text>
-          </Button>
+            >
+              <Image
+                source={{uri: 'https://www.burgerim.com/wp-content/uploads/2015/12/Burgerim-Burger-Pack-pack.png'}}
+                style={styles.image}
+              />
+              <Text style={styles.buttonText}>BOXES</Text>
+          </TouchableOpacity>
           <Button
             style={styles.summaryButton}
             mode='contained'
@@ -70,7 +119,9 @@ class Menus extends Component {
 const styles = StyleSheet.create({
   sidemenu: {
     width: '30%',
-    backgroundColor: '#eeeeee'
+    backgroundColor: '#36393f',
+    paddingLeft: 10,
+    paddingRight: 10
   },
   menus: {
     flex: 1,
@@ -81,15 +132,24 @@ const styles = StyleSheet.create({
   },
   button: {
     marginTop: 10,
-    height: 50
+    marginBottom: 10,
+    height: 60,
+    backgroundColor: '#f7fff7'
   },
   buttonText: {
-    lineHeight: 30
+    lineHeight: 60,
+    marginLeft: 10
   },
   summaryButton: {
+    marginTop: 10,
+    width: '100%',
+    backgroundColor: '#ff4f00'
+  },
+  image: {
+    width: 100,
+    height: 60,
     position: 'absolute',
-    bottom: 0,
-    width: '100%'
+    right: 0
   }
 });
 

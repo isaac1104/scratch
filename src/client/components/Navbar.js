@@ -7,7 +7,7 @@ class Navbar extends Component {
   renderNavbar() {
     const { pathname } = this.props.location;
     //change back to /customer once done
-    if (pathname === '/customer') {
+    if (pathname === '/') {
       return null;
     } else {
       return (
