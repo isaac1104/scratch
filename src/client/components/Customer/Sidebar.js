@@ -52,7 +52,7 @@ class Sidebar extends Component {
             compact
             style={styles.kitchenButton}
             >
-            Send to kitchen
+            <Text style={{ color: '#000000' }}>Send to kitchen</Text>
           </Button>
         </View>
       </View>
@@ -81,7 +81,8 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   kitchenButton: {
-    marginTop: 10
+    marginTop: 10,
+    backgroundColor: '#ffffff'
   }
 });
 
