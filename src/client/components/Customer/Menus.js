@@ -10,7 +10,7 @@ class Menus extends Component {
     loading: false
   };
 
-  renderMainMenus() {
+  renderMenuItems() {
     const { item_type } = this.props.orderItems;
     if (item_type === 'burgers') {
       return (
@@ -87,7 +87,7 @@ class Menus extends Component {
           </Button>
         </View>
         <View style={styles.menus}>
-          {this.renderMainMenus()}
+          {this.renderMenuItems()}
         </View>
       </Fragment>
     );
