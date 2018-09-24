@@ -47,14 +47,14 @@ class Sidebar extends Component {
         </View>
         <View style={styles.footer}>
           <Text style={styles.text}>Total: $1,000.00</Text>
-          <Button
-            mode='contained'
-            compact
-            style={styles.kitchenButton}
-            >
-            <Text style={{ color: '#000000' }}>Send to kitchen</Text>
-          </Button>
         </View>
+        <Button
+          mode='contained'
+          compact
+          style={styles.kitchenButton}
+          >
+            <Text style={{ color: '#000000' }}>Send to Kitchen</Text>
+          </Button>
       </View>
     );
   }
@@ -68,21 +68,24 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   body: {
-    marginTop: 50
+    marginTop: 80
   },
   text: {
     color: '#ffffff'
   },
   footer: {
     position: 'absolute',
-    bottom: 0,
+    bottom: 50,
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center'
   },
   kitchenButton: {
+    position: 'absolute',
+    bottom: 0,
     marginTop: 10,
-    backgroundColor: '#ffffff'
+    backgroundColor: '#eeeeee',
+    width: '100%'
   }
 });
 
