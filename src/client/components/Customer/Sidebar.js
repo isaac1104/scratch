@@ -39,14 +39,14 @@ class Sidebar extends Component {
           />
         </View>
         <View style={styles.body}>
-          <Text>Burger</Text>
-          <Text>Burger</Text>
-          <Text>Burger</Text>
-          <Text>Burger</Text>
-          <Text>Burger</Text>
+          <Text style={styles.text}>Burger</Text>
+          <Text style={styles.text}>Burger</Text>
+          <Text style={styles.text}>Burger</Text>
+          <Text style={styles.text}>Burger</Text>
+          <Text style={styles.text}>Burger</Text>
         </View>
         <View style={styles.footer}>
-          <Text>Total: $1,000.00</Text>
+          <Text style={styles.text}>Total: $1,000.00</Text>
           <Button
             mode='contained'
             compact
@@ -69,6 +69,9 @@ const styles = StyleSheet.create({
   },
   body: {
     marginTop: 50
+  },
+  text: {
+    color: '#ffffff'
   },
   footer: {
     position: 'absolute',
