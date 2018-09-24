@@ -1,7 +1,7 @@
 import { SAVE_ITEM_TYPE } from '../actions/types';
 
 const INITIAL_STATE = {
-  item_type: '',
+  item_type: 'burgers',
   item_id: '',
   meal_id: '',
   extras: []
