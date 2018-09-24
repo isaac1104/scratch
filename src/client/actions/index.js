@@ -59,3 +59,8 @@ export const signout = callback => async dispatch => {
   dispatch(userAuthSignout());
   callback();
 };
+
+export const saveItemType = type => ({
+  type: types.SAVE_ITEM_TYPE,
+  payload: type
+});
