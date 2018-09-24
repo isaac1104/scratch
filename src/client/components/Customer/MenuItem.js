@@ -28,8 +28,8 @@ class MenuItem extends Component {
 
 const styles = StyleSheet.create({
   itemBox: {
-    width: 300,
-    height: 80,
+    width: 500,
+    height: 100,
     backgroundColor: '#ffffff',
     marginBottom: 10,
     marginTop: 10
@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
   },
   image: {
     width: 100,
-    height: 80,
+    height: 100,
     position: 'absolute',
     right: 0,
     backgroundColor: '#ffffff'
