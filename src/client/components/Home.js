@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
   button: {
     width: 600,
     height: 100,
-    marginTop: 30
+    marginBottom: 30
   },
   text: {
     lineHeight: 80,
