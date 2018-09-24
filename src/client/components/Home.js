@@ -66,12 +66,13 @@ class Home extends Component {
 
 const styles = StyleSheet.create({
   button: {
-    width: 400,
-    height: 60,
-    marginTop: 10
+    width: 600,
+    height: 100,
+    marginTop: 30
   },
   text: {
-    lineHeight: 40
+    lineHeight: 80,
+    fontSize: 18
   },
   container: {
     flex: 1,
