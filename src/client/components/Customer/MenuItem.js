@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import { Text, StyleSheet, TouchableOpacity, Image, ActivityIndicator } from 'react-native';
+import { Text, StyleSheet, Image, ActivityIndicator } from 'react-native';
 import { Card, Title } from 'react-native-paper';
 
 class MenuItem extends Component {
