@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react';
+import { StyleSheet } from 'react-native';
 import { withRouter } from 'react-router-native';
 import { Appbar } from 'react-native-paper';
 import LocationSelector from './LocationSelector';
@@ -16,7 +17,7 @@ class Navbar extends Component {
           <Appbar.Content
             title='Scratch'
             subtitle='Your order made from scratch'
-            style={pathname === '/' ? '' : { marginRight: 50 }}
+            style={styles.container}
           />
           {this.renderLocationSelector()}
         </Appbar.Header>
@@ -49,5 +50,13 @@ class Navbar extends Component {
     );
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center'
+  }
+});
 
 export default withRouter(Navbar);

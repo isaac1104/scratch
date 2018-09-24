@@ -61,7 +61,7 @@ class Menus extends Component {
   render() {
     return (
       <Fragment>
-        <View style={styles.sidemenu}>
+        <View style={styles.itemCategories}>
           <TouchableOpacity
             style={styles.button}
             onPress={() => this.setState({ currentItem: 'burgers'})}
@@ -130,7 +130,7 @@ class Menus extends Component {
 };
 
 const styles = StyleSheet.create({
-  sidemenu: {
+  itemCategories: {
     width: '30%',
     backgroundColor: '#36393f',
     paddingLeft: 10,
@@ -144,23 +144,23 @@ const styles = StyleSheet.create({
     backgroundColor: '#f7fff7'
   },
   button: {
-    marginTop: 10,
+    marginTop: 20,
     marginBottom: 10,
-    height: 60,
+    height: 100,
     backgroundColor: '#f7fff7'
   },
   buttonText: {
-    lineHeight: 60,
-    marginLeft: 10
+    lineHeight: 100,
+    marginLeft: 20
   },
   summaryButton: {
-    marginTop: 10,
+    marginTop: 30,
     width: '100%',
     backgroundColor: '#ff4f00'
   },
   image: {
     width: 100,
-    height: 60,
+    height: 100,
     position: 'absolute',
     right: 0
   }

@@ -17,8 +17,8 @@ class CustomerView extends Component {
         position: 'absolute',
         zIndex: 100,
         right: 0,
-        top: 165,
-        marginRight: this.state.isOpen ? 115 : 0
+        top: 275,
+        marginRight: this.state.isOpen ? 180 : 0
       }
     };
 
