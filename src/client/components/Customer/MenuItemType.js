@@ -15,7 +15,7 @@ class MenuItemType extends Component {
         onPress={() => this.props.saveItemType(this.props.itemType)}
       >
         <Image
-          source={{uri: this.props.image}}
+          source={{ uri: this.props.image }}
           style={styles.image}
           onLoadStart={() => this.setState({ loading: true })}
           onLoadEnd={() => this.setState({ loading: false })}
