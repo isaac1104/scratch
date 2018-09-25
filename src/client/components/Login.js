@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, TouchableWithoutFeedback, Keyboard } from 'react-native';
 import { withRouter } from 'react-router-native';
 import LoginForm from './Form/LoginForm';
 import { Constants, SecureStore } from 'expo';
@@ -19,9 +19,11 @@ class Login extends Component {
 
   render() {
     return (
-      <View style={styles.container}>
-        <LoginForm />
-      </View>
+      <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
+        <View style={styles.container}>
+          <LoginForm />
+        </View>
+      </TouchableWithoutFeedback>
     );
   }
 }
