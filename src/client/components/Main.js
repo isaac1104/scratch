@@ -11,7 +11,7 @@ import Setting from './Setting/Setting';
 
 class Main extends Component {
   componentDidMount() {
-    ScreenOrientation.allow(Expo.ScreenOrientation.Orientation.LANDSCAPE_RIGHT);
+    ScreenOrientation.allow(Expo.ScreenOrientation.Orientation.LANDSCAPE_LEFT);
   };
 
   render() {
